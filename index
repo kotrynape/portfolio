@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #eaeaea;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #333, #555);
+            color: #eaeaea;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            text-align: center;
+            background-color: #1f1f1f;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #38ada9;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .about-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #1c1c1c;
+        }
+        .about-section img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            color: #cccccc;
+        }
+        .section {
+            padding: 50px 20px;
+            background-color: #1c1c1c;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .section h2 {
+            color: #38ada9;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .section p {
+            color: #cccccc;
+            font-size: 1.2em;
+        }
+        .section a {
+            color: #38ada9;
+            text-decoration: none;
+        }
+        .section a:hover {
+            text-decoration: underline;
+        }
+        .row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .row img {
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .image-rights {
+            font-size: 0.85em;
+            color: gray;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+   <h1>Kotryna Petraityte</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="about-section">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHHmhH80a0VtQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728520266740?e=1740009600&v=beta&t=7CbxEjTFpyXb_YL_8Yi9w7Z2HqOxxsB9LYcue7A6Blo" alt="Profile Picture of Kotryna Petraityte">
+        </div>
+        <nav>
+            <a href="#technical-writing">Technical Writing</a>
+            <a href="#social-media">Digital Marketing</a>
+            <a href="#creative-writing">Creative Writing</a>
+             <a href="#creative-writing">What She's Up To Now</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+    <div class="section" id="technical-writing">
+        <h2>Technical Writing</h2>
+        <p><strong>Kotryna wrote nearly 100 portfolio summaries for world-class scientists and researchers to support their U.S. immigration applications. Common topics included health, energy, and technology advancements. In addition to the summaries, she researched and drafted arguments to prove the substantial and national merit of their contributions.
+</strong></p>
+<p>Samples have been redacted to maintain confidentiality.</p>
+        <p><strong>Medical Advancements</strong></p>
+<p style="font-style: italic; margin-top: 10px;">
+    Dr. [REDACTED] conducted a toxicity study in rats to measure the resistance and toxicity profile for the new potent antimicrobial agent [REDACTED]. 
+    <span id="sample1-more" style="display: none;">Chemists synthesized a new drug because, although the currently sole approved antibacterial [REDACTED] has undisputed commercial success and is highly active against all major gram-positive pathogens, it is considered to be subject to serious myelosuppression safety limitations. Better understanding of the resistance and toxicity profile for the new potent agent before it went for clinical studies was indispensable. By intoxicating rats with the antimicrobial agent [REDACTED] and comparing it with [REDACTED] in rats, Dr. [REDACTED] discovered and developed a new potent oxazolidinone [REDACTED], which showed lower resistance and a better safety profile. The results of the research provided Dr. [REDACTED] with the necessary data for understanding the qualities of the new synthesized drug [REDACTED]. Knowledge of the drug resistance, its corresponding molecular mechanisms, and toxicity informed chemists of its safety and effectiveness, resulting in the clinical phases II and III currently done in the U.S. and China.
+    </span>
+    <a href="#" onclick="toggleText('sample1-more'); return false;">Continue reading</a>
+</p>
+
+<p><strong>Energy Technology</strong></p>
+<p style="font-style: italic; margin-top: 10px;">
+    In this project, he utilized high-resolution measurement data from modern electric power systems to improve stability monitoring and develop efficient control methodologies tailored to renewable energy-based power plants. 
+    <span id="sample2-more" style="display: none;">To achieve this, Mr. [REDACTED] developed advanced artificial intelligence models trained with the measurement data to generate detailed physical representations of various power plants. These models formed the basis for creating precise control strategies to optimize the performance of renewable energy sources integrated into the power grid. One significant outcome of Mr. [REDACTED]'s research was the identification of instability issues in modern electric power systems, particularly when multiple energy sources were connected via power electronic converters. (...) To address this challenge, he developed enhanced control techniques based on data-driven analysis and introduced an artificial intelligence-based framework for real-time estimation of critical parameters required for power system stability evaluation.
+    </span>
+    <a href="#" onclick="toggleText('sample2-more'); return false;">Continue reading</a>
+</p>
+
+<p><strong>IoT Technology</strong></p>
+<p style="font-style: italic; margin-top: 10px;">
+    One of Dr. [REDACTED]'s projects that particularly stands out focuses on advancing real-time radio frequency (RF) signal processing through machine learning techniques. 
+    <span id="sample3-more" style="display: none;">His research targeted two key areas: Digital Pre-Distortion (DPD) and Digital Self-Interference Cancellation (SIC). In DPD, Dr. [REDACTED] introduced an innovative approach using a one-dimensional convolutional neural network (CNN) for real-time signal distortion correction. (...) For SIC, Dr. [REDACTED] proposed an augmented [REDACTED] method that significantly enhanced interference elimination across varying bandwidths. (...) These groundbreaking contributions have established a robust foundation for applying machine learning in RF signal processing, driving advancements in communication system performance and enabling applications such as modulation recognition and spectrum sensing.
+    </span>
+    <a href="#" onclick="toggleText('sample3-more'); return false;">Continue reading</a>
+</p>
+
+<script>
+    function toggleText(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "inline";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+
+    <div class="section" id="social-media">
+        <h2>Social Media</h2>
+        <p><strong>At a digital marketing company, Kotryna created digital content campaigns for well-known European brands like Telia, General Financing, and Walmark Stada. She mainly wrote copy, pitched social media ideas, and developed Google Ads, newsletters, and SEO-optimized content.</p></strong> 
+        <p>Although Kotryna insists she’s still fun at parties, she says she finds writing “boring” stuff much more enjoyable.</p>
+        <div class="row">
+            <img src="https://www.digitalsense.lt/media/647.png" alt="Social Media Content Example">
+            <img src="https://www.digitalsense.lt/media/606.gif" alt="Digital Media Example">
+            <img src="https://www.digitalsense.lt/media/628.gif" alt="Google Ads Example">
+            <img src="https://www.digitalsense.lt/media/569.png" alt="Website SEO Example">
+        </div>
+        <p class="image-rights">&copy; Digital Sense and respective companies</p>
+    </div>
+
+    <div class="section" id="creative-writing">
+        <h2>Creative Writing</h2>
+     
+    <p><strong>Kotryna's creative works have been published in Lithuanian journals such as <a href="https://www.15min.lt" target="_blank">15min</a>, <a href="https://www.lrytas.lt" target="_blank">Lietuvos Rytas</a>, and <a href="https://www.bernardinai.lt" target="_blank">Bernardinai</a>. These outlets rank among the most widely read platforms in the country.
+    <div class="row"></strong>
+        <div style="flex: 1; padding: 10px; border-right: 1px solid #ddd;">
+            <h3>
+                <a href="https://www.15min.lt/kultura/naujiena/literatura/liutauro-degesio-knygos-recenzija-apie-vakar-ir-rytoj-kurie-yra-siandien-286-799454" target="_blank">Book Review: Yesterday and Tomorrow are Today</a>
+            </h3>
+            <p><em>"Fully aware that the future is already here and that the present is so fleeting it scarcely seems to exist, the protagonist finds himself trapped in procrastination. He imagines he could be different — perhaps finally more fulfilled — if only he knew how to live in the moment, rather than in the shadow of the past. Hoping for salvation in tomorrow, he avoids, or even refuses, to admit that the day he placed all his hopes on — the day meant for understanding, self-discovery, and love —has already come and gone. It was yesterday."</em></p>
+        </div>
+        <div style="flex: 1; padding: 10px; border-right: 1px solid #ddd;">
+            <h3>
+                <a href="https://www.lrytas.lt/kultura/meno-pulsas/2020/05/17/news/rezisiere-rita-urbonaviciute-kiekvienas-gyvenimo-paradoksas-kvepia-dangumi--14929245" target="_blank">Interview with Director R. Urbanaviciute</a>
+            </h3>
+            <p><em>"Quarantine reshaped everyone's plans with a single stroke, but it was especially impactful for stage artists, whose lives were temporarily put on hold. Performances were postponed, rehearsals halted, and the creative flow interrupted. In light of this, we spoke with director R. Urbonaviciute about the current situation.</em></p>
+            <p><em>Kotryna: There's a joke going around that 'B.C.' no longer stands for life 'Before Christ' but 'Before Covid.' Many people reminisce longingly about the freedom they had before the pandemic. Do you find yourself missing that life too?"</em></p>
+        </div>
+        <div style="flex: 1; padding: 10px;">
+            <h3>
+                <a href="https://www.bernardinai.lt/2017-06-22-stebuklas-tam-kad-taptum-zmogumi/" target="_blank">Book Review: Why People Need Miracles</a>
+            </h3>
+            <p><em>"The author takes a somewhat harsh stance on modern children's literature and textbooks, arguing that they fail to cultivate free thinking in children. This, the author claims, deprives children of the chance to explore what truly matters at their developmental stage—often something entirely different from the priorities imposed by adults. Contrary to current trends of prioritizing logical knowledge, the author emphasizes that nurturing imagination should take precedence. (...) A child intuitively discovers their place in the world and finds answers to their own questions."</em></p>
+        </div>
+ <div class="section" id="upcoming-projects">
+
+    <h2>What She's up to Now</h2>
+    <p>Kotryna is translating a series of over 30 articles she wrote during her travels in Spain (2019) and New Zealand (2024), originally published in a small local media outlet. Reaching around 1,000 readers each, the articles explore themes of solo travel, solitude, human connection, and the search for meaning through adventure.</p>
+    
+    <!-- First Article -->
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h3>
+            <a href="https://silales-artojas.lt/naujienos/krasto-turtas-zmones-istorija-tradicijos/2439-ka-cia-nuveikus" target="_blank">
+                To Meet a Lithuanian in New Zealand: How Small Our Big World Is
+            </a>
+        </h3>
+        <a href="https://taurageszinios.lt/naujienos/aktualijos/2024/09/sutikti-lietuvi-naujojoje-zelandijoje-koks-mazas-musu-didelis-pasaulis" target="_blank">
+            <img src="https://silales-artojas.lt/media/k2/items/cache/98d2cb42c245b23aead7d7c25521b644_XL.jpg" alt="Meeting a Lithuanian in New Zealand" style="width: 200px; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+        </a>
+        <p style="font-style: italic; margin-top: 10px;">"In twelve days, you can warm up to a new job, visit a country, or make a new friend. I haven't tested it myself, but I believe even people like me can learn to cook a dish perfectly in twelve days. In that time, you can finish a book or two, recover from the flu (though if you haven't recovered in twelve days, consult your family doctor), fall in love, or come to terms with losing someone dear. And yes, in that time, you can also complete the Camino Primitivo route."</p>
+    </div>
+
+    <!-- Second Article -->
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h3>
+            <a href="https://silales-artojas.lt/naujienos/kultura-projektai/5661-naujoji-zelandija-pasaulio-pazinimo-pamokos" target="_blank">
+                Back to School in New Zealand
+            </a>
+        </h3>
+        <a href="https://silales-artojas.lt/naujienos/kultura-projektai/5661-naujoji-zelandija-pasaulio-pazinimo-pamokos" target="_blank">
+            <img src="https://silales-artojas.lt//media/k2/attachments/IMG_6448.jpg" alt="Back to School in New Zealand" style="width: 200px; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+        </a>
+        <p style="font-style: italic; margin-top: 10px;">"To be fair, my knowledge of New Zealand was (to say the least) limited when I first planned my trip. In fact, it wasn't until after I'd booked my flight that I learned the country comprises two main islands: the North and the South."</p>
+    </div>
+
+    <!-- Third Article -->
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h3>
+            <a href="https://silales-artojas.lt/naujienos/kultura-projektai/5885-apie-naujosios-zelandijos-kalnu-namelius-ir-niekur-nedingstanti-zaidimu-karsti" target="_blank">
+                About New Zealand Mountain Huts and the Never-Ending Gaming Fever
+            </a>
+        </h3>
+        <a href="https://silales-artojas.lt/naujienos/kultura-projektai/5885-apie-naujosios-zelandijos-kalnu-namelius-ir-niekur-nedingstanti-zaidimu-karsti" target="_blank">
+            <img src="https://silales-artojas.lt//media/k2/attachments/IMG_9860.jpg" alt="New Zealand Mountain Huts and Gaming Fever" style="width: 200px; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+        </a>
+        <p style="font-style: italic; margin-top: 10px;">"They say that winters used to be colder, but I don't remember being cold when I was still a little girl, stuffing handfuls of snow into my mouth. More than the cold, I remember the minute breaks during games – the snow, crunching from the cold, was there instead of water, for refreshment. After a few handfuls, breathing deeply and with red cheeks, we ran back to the hill to slide down or hide from our friends who were starting to attack us with snowballs again. Energy and heat flowed through our bodies – with that hot joy of games, we could thaw even the coldest winters."</p>
+    </div>
+</div>
+</div>
+            <div class="contact-section" id="contact">
+    </style>
+  <div class="contact-section" id="contact">
+    <style>
+        .contact-section {
+            padding: 30px;
+            background-color: #1f1f1f;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .contact-section h2 {
+            color: #38ada9;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .contact-section p {
+            color: #cccccc;
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .contact-section a {
+            color: #38ada9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+        .contact-section img {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+    <h2>Contact</h2>
+    <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon">
+        <a href="mailto:kotryna.petraityte@gmail.com">kotryna.petraityte@gmail.com</a>
+    </p>
+    <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone Icon">
+        +1 236 833 7077</p>
+    <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon">
+        <a href="https://www.linkedin.com/in/kotryna-pet/" target="_blank">LinkedIn</a>
+    </p>
+    <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Blog Icon">
+        <a href="https://tinyurl.com/pozingsniu" target="_blank">Personal Blog</a> 
+    </p>
+     <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location Icon">
+        Vancouver, Canada
+         <p style="font-style: italic; margin-top: 10px;"> More samples available upon request. </p>
+    </p>
+</div>
+
+   
