@@ -19,19 +19,21 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #1f1f1f;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            position: sticky;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
             top: 0;
+            width: 100%;
+            padding: 20px;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
         nav a {
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
-            color: #38ada9;
-            font-weight: bold;
-            font-size: 1.1em;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 1.2em;
             transition: color 0.3s;
         }
         nav a:hover {
@@ -43,32 +45,45 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: linear-gradient(135deg, #333, #555);
-            color: #eaeaea;
+            background: url('https://source.unsplash.com/1600x900/?abstract,technology') no-repeat center center/cover;
+            color: #ffffff;
             text-align: center;
             padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
         }
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin: 0 0 20px;
         }
         .hero p {
             font-size: 1.5em;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto 30px;
         }
         .hero a {
             display: inline-block;
             background-color: #38ada9;
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 5px;
+            padding: 15px 40px;
+            border-radius: 30px;
             font-size: 1.2em;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
         .hero a:hover {
             background-color: #66cdaa;
+            transform: scale(1.1);
         }
         .footer {
             text-align: center;
@@ -91,8 +106,8 @@
 
     <div class="hero">
         <h1>Kotryna Petraityte</h1>
-        <p>Welcome to my portfolio. Explore my work in technical writing, digital marketing, and creative endeavorsukkgkgkghghhjjgjhjj.</p>
-        <a href="technical-writing.html">View My Work</a>
+        <p>Innovative writer with expertise in technical documentation, digital marketing, and creative storytelling. Let’s create something extraordinary together.</p>
+        <a href="technical-writing.html">Explore My Work</a>
     </div>
 
     <div class="footer">
@@ -100,5 +115,6 @@
     </div>
 </body>
 </html>
+
 
 
