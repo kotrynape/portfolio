@@ -3,15 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Writing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio of Kotryna Petraityte showcasing technical writing projects.">
+    <meta name="keywords" content="Technical Writing, Documentation, Kotryna Petraityte, Portfolio">
+    <meta name="author" content="Kotryna Petraityte">
+    <title>Technical Writing - Kotryna Petraityte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #eaeaea; margin: 0; padding: 0; }
-        nav { text-align: center; background: #1f1f1f; padding: 10px 0; }
-        nav a { color: #38ada9; margin: 0 15px; text-decoration: none; font-size: 1.2em; }
-        nav a:hover { text-decoration: underline; }
-        .section { max-width: 800px; margin: 50px auto; padding: 20px; background: #1c1c1c; border-radius: 10px; }
-        .section h2 { color: #38ada9; }
+        body {
+            font-family: 'Barlow', sans-serif;
+            color: #2c2c2c;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 220px;
+            padding: 30px 20px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 20px 0;
+            text-decoration: none;
+            color: #333333;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 500;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #009688;
+        }
+        .content {
+            margin-left: 240px;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333333;
+            text-transform: uppercase;
+        }
+        .content p {
+            font-family: 'Barlow', sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555555;
+            line-height: 1.6;
+        }
+        .content .project {
+            margin-bottom: 30px;
+        }
+        .content .project h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: #009688;
+            margin-bottom: 10px;
+        }
+        .content .project p {
+            font-size: 1em;
+            color: #666666;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eaeaea;
+            color: #666666;
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.9em;
+            font-weight: 300;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 240px);
+            left: 240px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -23,9 +104,25 @@
         <a href="upcoming-projects.html">What She's Up To</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <div class="section">
-        <h2>Technical Writing</h2>
-        <p>Kotryna wrote nearly 100 portfolio summaries for world-class scientists and researchers...</p>
+
+    <div class="content">
+        <h1>Technical Writing Projects</h1>
+        <div class="project">
+            <h2>API Documentation for XYZ Product</h2>
+            <p>Developed comprehensive API documentation for XYZ Product, ensuring clarity and ease of use for developers. Included detailed examples, error handling, and step-by-step guides.</p>
+        </div>
+        <div class="project">
+            <h2>User Manual for ABC Software</h2>
+            <p>Created an engaging and easy-to-follow user manual for ABC Software, helping users quickly navigate through features and troubleshoot common issues.</p>
+        </div>
+        <div class="project">
+            <h2>Technical White Paper on DEF Technology</h2>
+            <p>Authored a technical white paper explaining the core functionalities of DEF Technology, targeting both technical and non-technical audiences.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 </body>
 </html>
