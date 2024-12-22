@@ -21,24 +21,26 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.8);
             position: fixed;
             top: 0;
             left: 0;
             height: 100%;
-            width: 200px;
-            padding: 20px;
+            width: 220px;
+            padding: 30px 20px;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
         }
         nav a {
-            margin: 15px 0;
+            margin: 20px 0;
             text-decoration: none;
             color: #ffffff;
             font-family: 'Barlow', sans-serif;
             font-weight: 500;
-            font-size: 1em;
+            font-size: 1.1em;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
             transition: color 0.3s;
         }
         nav a:hover {
@@ -47,53 +49,44 @@
         .hero {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            background: url('https://source.unsplash.com/1600x900/?abstract,technology') no-repeat center center/cover;
-            color: #ffffff;
+            margin-left: 240px;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.6)), url('https://source.unsplash.com/1600x900/?abstract,technology') no-repeat center center/cover;
             text-align: center;
             padding: 20px;
-            position: relative;
-            z-index: 1;
-            margin-left: 200px;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
+            box-sizing: border-box;
         }
         .hero h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 4em;
-            margin: 0 0 20px;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
         .hero p {
             font-family: 'Barlow', sans-serif;
-            font-size: 1.5em;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #dcdcdc;
+            max-width: 700px;
         }
         .hero a {
-            display: inline-block;
             background-color: #38ada9;
             color: #ffffff;
             text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 30px;
+            padding: 15px 30px;
+            border-radius: 5px;
             font-family: 'Barlow', sans-serif;
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             transition: background-color 0.3s, transform 0.3s;
         }
         .hero a:hover {
             background-color: #66cdaa;
-            transform: scale(1.1);
+            transform: translateY(-2px);
         }
         .footer {
             text-align: center;
@@ -103,7 +96,8 @@
             font-family: 'Barlow', sans-serif;
             font-size: 0.9em;
             font-weight: 300;
-            margin-left: 200px;
+            margin-left: 240px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
