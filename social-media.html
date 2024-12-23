@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,8 +86,9 @@
         .content .row {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 50px;
             flex-wrap: wrap;
         }
         .content .row img {
@@ -150,7 +152,7 @@
 
             images.forEach(img => {
                 img.addEventListener("click", () => {
-                    overlayImage.src = img.src;
+                    overlayImage.src = img.dataset.full;
                     overlay.classList.add("active");
                 });
             });
@@ -178,11 +180,21 @@
             <p>Kotryna created digital content campaigns for well-known European brands like Telia, General Financing, and Walmark Stada. Her contributions included copywriting, pitching social media ideas, and developing Google Ads, newsletters, and SEO-optimized content.</p>
         </div>
         <div class="row">
-            <img src="https://www.digitalsense.lt/media/647.png" alt="Social Media Content Example">
-            <img src="https://www.digitalsense.lt/media/606.gif" alt="Digital Media Example">
-            <img src="https://www.digitalsense.lt/media/628.gif" alt="Google Ads Example">
-            <img src="https://www.digitalsense.lt/media/569.png" alt="Website SEO Example">
-            <img src="https://www.digitalsense.lt/media/617.png" alt="Additional Content Example">
+            <img src="https://www.digitalsense.lt/media/647_thumb.png" 
+                data-full="https://www.digitalsense.lt/media/647.png" 
+                alt="Social Media Content Example">
+            <img src="https://www.digitalsense.lt/media/606_thumb.gif" 
+                data-full="https://www.digitalsense.lt/media/606.gif" 
+                alt="Digital Media Example">
+            <img src="https://www.digitalsense.lt/media/628_thumb.gif" 
+                data-full="https://www.digitalsense.lt/media/628.gif" 
+                alt="Google Ads Example">
+            <img src="https://www.digitalsense.lt/media/569_thumb.png" 
+                data-full="https://www.digitalsense.lt/media/569.png" 
+                alt="Website SEO Example">
+            <img src="https://www.digitalsense.lt/media/617_thumb.png" 
+                data-full="https://www.digitalsense.lt/media/617.png" 
+                alt="Additional Content Example">
         </div>
         <p class="image-rights">&copy; Digital Sense and respective companies</p>
     </div>
