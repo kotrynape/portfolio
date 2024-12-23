@@ -36,7 +36,7 @@
         nav a {
             margin: 20px 0;
             text-decoration: none;
-            color: #333333;
+            color: #495F56;
             font-family: 'Barlow', sans-serif;
             font-weight: 500;
             font-size: 1.1em;
@@ -47,14 +47,8 @@
         nav a:hover {
             color: #5E8D7C;
         }
-        a:link, a:visited {
-            color: #495F56;
-            text-decoration: none;
-            font-weight: 400;
-        }
-        a:hover {
-            color: #5E8D7C;
-            text-decoration: underline;
+        nav a:first-child {
+            color: #6E9E8A;
         }
         .content {
             margin-left: 320px;
@@ -78,6 +72,11 @@
             color: #555555;
             line-height: 1.6;
             font-weight: 300;
+            overflow: hidden;
+            max-height: 220px;
+            text-align: left;
+            transition: max-height 0.3s ease;
+            vertical-align: top;
         }
         .content .section {
             margin-bottom: 30px;
@@ -91,11 +90,6 @@
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
-        .content .section p {
-            font-size: 1em;
-            color: #666666;
-            font-weight: 300;
-        }
         .content .row {
             display: flex;
             flex-wrap: wrap;
@@ -106,6 +100,10 @@
             flex: 1;
             padding: 10px;
             border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 250px;
         }
         .content .row > div:last-child {
             border-right: none;
@@ -121,6 +119,15 @@
             font-size: 1em;
             color: #555555;
             line-height: 1.5;
+            text-align: left;
+        }
+        .content .read-more {
+            cursor: pointer;
+            color: #5E8D7C;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            margin-top: 10px;
         }
         .footer {
             text-align: center;
@@ -147,32 +154,36 @@
         <a href="upcoming-projects.html">What She's Up To</a>
         <a href="contact.html">Contact</a>
     </nav>
-    
+
     <div class="content">
         <h1>Creative Writing</h1>
         <div class="section">
             <h2>Published Works</h2>
             <div class="row">
                 <div>
-                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/liutauro-degesio-knygos-recenzija-apie-vakar-ir-rytoj-kurie-yra-siandien-286-799454" target="_blank" style="font-weight: bold;">Book Review: Yesterday and Tomorrow are Today</a></h3>
+                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/liutauro-degesio-knygos-recenzija-apie-vakar-ir-rytoj-kurie-yra-siandien-286-799454" target="_blank" style="color: #495F56;">Book Review: Yesterday and Tomorrow are Today</a></h3>
                     <p><em>"Fully aware that the future is already here and that the present is so fleeting it scarcely seems to exist, the protagonist finds himself trapped in procrastination. He imagines he could be different — perhaps finally more fulfilled — if only he knew how to live in the moment, rather than in the shadow of the past. Hoping for salvation in tomorrow, he avoids, or even refuses, to admit that the day he placed all his hopes on — the day meant for understanding, self-discovery, and love — has already come and gone. It was yesterday."</em></p>
+                    <span class="read-more" onclick="toggleText(this)">Read more</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.lrytas.lt/kultura/meno-pulsas/2020/05/17/news/rezisiere-rita-urbonaviciute-kiekvienas-gyvenimo-paradoksas-kvepia-dangumi--14929245" target="_blank" style="font-weight: bold;">Interview with Director R. Urbanaviciute</a></h3>
+                    <h3><a href="https://www.lrytas.lt/kultura/meno-pulsas/2020/05/17/news/rezisiere-rita-urbonaviciute-kiekvienas-gyvenimo-paradoksas-kvepia-dangumi--14929245" target="_blank" style="color: #495F56;">Interview with Director R. Urbanaviciute</a></h3>
                     <p><em>"Quarantine reshaped everyone's plans with a single stroke, but it was especially impactful for stage artists, whose lives were temporarily put on hold. Performances were postponed, rehearsals halted, and the creative flow interrupted. In light of this, we spoke with director R. Urbonaviciute about the current situation."</em></p>
-                    <p><em>Kotryna: There's a joke going around that 'B.C.' no longer stands for life 'Before Christ' but 'Before Covid.' Many people reminisce longingly about the freedom they had before the pandemic. Do you find yourself missing that life too?"</em></p>
+                    <span class="read-more" onclick="toggleText(this)">Read more</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.bernardinai.lt/2017-06-22-stebuklas-tam-kad-taptum-zmogumi/" target="_blank" style="font-weight: bold;">Book Review: Why People Need Miracles</a></h3>
+                    <h3><a href="https://www.bernardinai.lt/2017-06-22-stebuklas-tam-kad-taptum-zmogumi/" target="_blank" style="color: #495F56;">Book Review: Why People Need Miracles</a></h3>
                     <p><em>"The author takes a somewhat harsh stance on modern children's literature and textbooks, arguing that they fail to cultivate free thinking in children. This, the author claims, deprives children of the chance to explore what truly matters at their developmental stage—often something entirely different from the priorities imposed by adults. Contrary to current trends of prioritizing logical knowledge, the author emphasizes that nurturing imagination should take precedence. (...) A child intuitively discovers their place in the world and finds answers to their own questions."</em></p>
+                    <span class="read-more" onclick="toggleText(this)">Read more</span>
                 </div>
                 <div>
-                    <h3><a href="http://www.g-taskas.lt/sveiki-sugrize-i-suduzusiu-sirdziu-kluba-pjeses-haroldas-ir-mode-premjera/#more-27616" target="_blank" style="font-weight: bold;">Welcome Back to the Broken Hearts Club: Premiere of the play <em>Harold and Maude</em></a></h3>
+                    <h3><a href="http://www.g-taskas.lt/sveiki-sugrize-i-suduzusiu-sirdziu-kluba-pjeses-haroldas-ir-mode-premjera/#more-27616" target="_blank" style="color: #495F56;">Welcome Back to the Broken Hearts Club: Premiere of the play <em>Harold and Maude</em></a></h3>
                     <p><em>"Unwilling and unable to conform to a society of superficial feelings, Harold retreats inward in protest. Sound familiar, millennials? (...) Harold rejects all of society’s life formulas, except for one — the formula of love. Not necessarily love for a man or a woman, for family, or for those who might benefit from it, but a love that is entirely unconditional — authentic, immediate, and meant for every person, plant, animal, and ultimately, for life itself. This is the kind of love Maude embodies, the love that opens Harold to life. An almost 80-year-old woman, who at first glance may seem a bit eccentric — perhaps even “crazy” to many of us “normals” — ultimately triumphs. Through her mere existence, she convinces Harold, and us, of a profound truth: life is wonderful, and even with a broken heart, one must go on to “love even harder, even more.”</em></p>
+                    <span class="read-more" onclick="toggleText(this)">Read more</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.bernardinai.lt/2017-07-19-su-meile-paslapciai-keith-stuart-knygos-kaladeliu-berniukas-recenzija/" target="_blank" style="font-weight: bold;">Book Review: With Love, to Mystery</a></h3>
-                    <p><em>"Would you dare not laugh at your boss's pitifully unfunny joke? To burst into tears when you're utterly exhausted, surrounded by indifferent people? To refrain from smiling or asking about the well-being of distant relatives you only meet at funerals and whose names you can't recall? Admit it — the risk of falling off the list of 'normals' feels too great. Alongside a few daring souls, there are also those who fall off this list at birth, navigating life without the rule book most people follow. This, according to the father of the brick boy Sam, is what autism is."</em></p>
+                    <h3><a href="https://www.spaudosavaite.lt/2019/04/09/kreatyvo-ir-kurimo-riba-apie-laisva-valia-ir-sugribimo-istorijas/" target="_blank" style="color: #495F56;">Freedom of Will and Recovery</a></h3>
+                    <p><em>"We are a society of sick people, and we all know it, we feel it, we live it. In their own way, each person is affected, like a broken-down machine, a prisoner of circumstances — and still, there is no way out. But the real question, as always, is not in the machine's condition; it’s in the operator’s state. What would happen if we stopped blaming our faults on someone else? What would we do if we admitted that only we control the decisions that determine the next step?"</em></p>
+                    <span class="read-more" onclick="toggleText(this)">Read more</span>
                 </div>
             </div>
         </div>
@@ -181,5 +192,19 @@
     <div class="footer">
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
+
+    <script>
+        // Function to toggle the paragraph content
+        function toggleText(button) {
+            const paragraph = button.previousElementSibling;
+            if (paragraph.style.maxHeight === 'none') {
+                paragraph.style.maxHeight = '220px'; // Collapse the paragraph
+                button.innerText = 'Read more';
+            } else {
+                paragraph.style.maxHeight = 'none'; // Expand the paragraph
+                button.innerText = 'Read less';
+            }
+        }
+    </script>
 </body>
 </html>
