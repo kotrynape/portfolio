@@ -184,23 +184,27 @@
 
         // Toggles visibility of all projects in a category
         function toggleProjects(categoryId) {
-            const projects = document.querySelectorAll(`#${categoryId} .project`);
+            const category = document.getElementById(categoryId);
+            const projects = category.querySelectorAll('.project');
             projects.forEach(project => {
                 project.style.display = project.style.display === 'none' ? 'block' : 'none';
             });
 
             // Change the text of the button based on the current state
-            const button = document.querySelector(`#${categoryId} button`);
+            const button = category.querySelector('button');
             const isVisible = projects[0].style.display === 'block';
             button.textContent = isVisible ? 'Hide Projects' : 'Show Projects';
         }
 
         // Initialize the projects to be hidden when the page loads
         window.onload = function() {
-            const allProjects = document.querySelectorAll('.project');
-            allProjects.forEach(project => {
-                project.style.display = 'none'; // Hide projects by default
-            };
+            const allCategories = document.querySelectorAll('.category');
+            allCategories.forEach(category => {
+                const projects = category.querySelectorAll('.project');
+                projects.forEach(project => {
+                    project.style.display = 'none'; // Hide projects by default
+                });
+            });
         }
     </script>
 
@@ -224,7 +228,7 @@
             <h2>Science and Technology Innovations</h2>
 
             <!-- Show/Hide Projects button -->
-            <button onclick="toggleProjects('science-tech')">Show/Hide Projects</button>
+            <button onclick="toggleProjects('science-tech')">Show Projects</button>
 
             <div class="project">
                 <h3>Advanced Renewable Energy Systems</h3>
@@ -243,15 +247,13 @@
                 </div>
                 <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
             </div>
-        
-        
-        
-        
-         <div class="category" id="science-tech-1">
+        </div>
+
+        <div class="category" id="science-tech-1">
             <h2>Science and Technology Innovations</h2>
 
             <!-- Show/Hide Projects button -->
-            <button onclick="toggleProjects('science-tech-1')">Show/Hide Projects</button>
+            <button onclick="toggleProjects('science-tech-1')">Show Projects</button>
 
             <div class="project">
                 <h3>Advanced Renewable Energy Systems</h3>
@@ -261,15 +263,13 @@
                 </div>
                 <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
             </div>
-            
-            
-            
-            
-             <div class="category" id="science-tech-2">
+        </div>
+
+        <div class="category" id="science-tech-2">
             <h2>Science and Technology Innovations</h2>
 
             <!-- Show/Hide Projects button -->
-            <button onclick="toggleProjects('science-tech-2')">Show/Hide Projects</button>
+            <button onclick="toggleProjects('science-tech-2')">Show Projects</button>
 
             <div class="project">
                 <h3>Advanced Renewable Energy Systems</h3>
@@ -279,6 +279,8 @@
                 </div>
                 <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
             </div>
+        </div>
+
     </div>
 
     <div class="footer">
