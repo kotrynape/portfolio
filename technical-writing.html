@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <meta name="author" content="Kotryna Petraityte">
     <title>Technical Writing - Kotryna Petraityte</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Barlow', sans-serif;
@@ -17,6 +19,7 @@
             padding: 0;
             font-weight: 300;
         }
+
         nav {
             display: flex;
             flex-direction: column;
@@ -33,6 +36,7 @@
             border-right: 1px solid rgba(0, 0, 0, 0.1);
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
+
         nav a {
             margin: 20px 0;
             text-decoration: none;
@@ -44,12 +48,15 @@
             letter-spacing: 0.05em;
             transition: color 0.3s;
         }
+
         nav a:hover {
             color: #5E8D7C;
         }
+
         nav a:first-child {
             color: #6E9E8A;
         }
+
         .content {
             margin-left: 320px;
             margin-right: 240px;
@@ -57,6 +64,7 @@
             padding: 40px;
             box-sizing: border-box;
         }
+
         .content h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.5em;
@@ -65,18 +73,45 @@
             text-transform: uppercase;
             font-weight: 400;
         }
-        .content p {
-            font-family: 'Barlow', sans-serif;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #555555;
-            line-height: 1.6;
-            font-weight: 300;
+
+        .content button {
+            font-size: 1em;
+            color: #333;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
+
+        .content button:hover {
+            background-color: #6E9E8A;
+            color: #fff;
+            border-color: #6E9E8A;
+        }
+
+        .content .category {
+            margin-bottom: 40px;
+        }
+
+        .content .category h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75em;
+            color: #6E9E8A;
+            margin-bottom: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
         .content .project {
             margin-bottom: 30px;
         }
-        .content .project h2 {
+
+        .content .project h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.25em;
             color: #6E9E8A;
@@ -85,11 +120,37 @@
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
+
         .content .project p {
             font-size: 1em;
             color: #666666;
             font-weight: 300;
         }
+
+        .content .project .more-content {
+            display: none;
+        }
+
+        .content .project button.read-more {
+            font-size: 1em;
+            color: #333;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .content .project button.read-more:hover {
+            background-color: #6E9E8A;
+            color: #fff;
+            border-color: #6E9E8A;
+        }
+
         .footer {
             text-align: center;
             padding: 20px;
@@ -104,9 +165,36 @@
             left: 220px;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
+
     </style>
+
+    <script>
+        // Toggles the visibility of a single project's detailed content
+        function toggleReadMore(button) {
+            const moreContent = button.previousElementSibling; // This is the .more-content div
+            const isVisible = moreContent.style.display === 'block';
+            if (isVisible) {
+                moreContent.style.display = 'none';
+                button.textContent = 'Read More';
+            } else {
+                moreContent.style.display = 'block';
+                button.textContent = 'Read Less';
+            }
+        }
+
+        // Toggles visibility of all projects in a category
+        function toggleProjects(categoryId) {
+            const projects = document.querySelectorAll(`#${categoryId} .project`);
+            projects.forEach(project => {
+                project.style.display = project.style.display === 'none' ? 'block' : 'none';
+            });
+        }
+    </script>
+
 </head>
+
 <body>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="technical-writing.html">Technical Writing</a>
@@ -118,22 +206,52 @@
 
     <div class="content">
         <h1>Technical Writing Projects</h1>
-        <div class="project">
-            <h2>API Documentation for XYZ Product</h2>
-            <p>Developed comprehensive API documentation for XYZ Product, ensuring clarity and ease of use for developers. Included detailed examples, error handling, and step-by-step guides.</p>
+
+        <div class="category" id="science-tech">
+            <h2>Science and Technology Innovations</h2>
+
+            <!-- Show/Hide Projects button -->
+            <button onclick="toggleProjects('science-tech')">Show/Hide Projects</button>
+
+            <div class="project">
+                <h3>Advanced Renewable Energy Systems</h3>
+                <p>The Department of Energy (DOE) envisions a future where solar energy supplies up to 40% of the nation's electricity by 2035. This shift aims to achieve deep decarbonization of the energy grid, create up to 1.5 million jobs, and maintain stable electricity prices. Mr. [redacted]’s pioneering control strategy for solar power plants is a crucial component in realizing this ambitious goal. By delivering essential stabilizing support to the power grid, his work enables the seamless integration of solar power into the energy mix, enhancing the resilience and sustainability of the U.S. electrical infrastructure and positioning the nation as a leader in sustainable energy innovation.</p>
+                <div class="more-content">
+                <p>To be more specific, Mr. [redacted]’s exceptional contribution lies in his ability to conduct meticulous and insightful research. For example, in one of his significant projects, he studied DC (direct current) power distribution systems, renowned for their efficiency and increasing relevance in sectors such as data centers, military bases, railways, and electric vehicle charging stations. His research focused on the stability of DC microgrids, particularly when operating independently from the main power grid. To explore this, Mr. [redacted] developed an off-grid DC microgrid incorporating local power generation sources, such as solar power plants and battery energy storage systems.</p>
+                <p>His findings highlighted a critical issue: when disconnected from the main grid, DC microgrids often experience instability. This problem stems from conventional solar power plant control strategies, which prioritize energy capture but struggle to respond to fluctuating consumer power demands, thereby jeopardizing grid stability. To address this, Mr. [redacted] proposed an innovative control strategy specifically designed for solar power plants. This approach included maintaining a reserve power capacity for emergencies and leveraging artificial intelligence to predict solar plant output in real time. Through comprehensive computer simulations, Mr. [redacted] validated his strategy’s effectiveness in stabilizing grid performance during unpredictable weather conditions and variations in consumer loads.
+
+</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+
+            <div class="project">
+                <h3>Semiconductor Materials for Optoelectronics</h3>
+                <p>Dr. [redacted]’s research on photochromic mechanisms in oxygen-containing rare-earth metal hydrides exemplifies his influential contributions...</p>
+                <div class="more-content">
+                    <p>The material, YHxOy, is a newly discovered photochromic compound with a rapid photoresponse, making it highly promising for applications in optical sensors...</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+
+            <div class="project">
+                <h3>Photochromic Mechanisms in Rare-Earth Metal Hydrides</h3>
+                <p>Gold-catalyzed amination reactions have become an indispensable tool for synthesizing complex organic compounds...</p>
+                <div class="more-content">
+                    <p>Central to these reactions are α-oxo gold carbenes, which are formed through the synthesis of gold catalysts with other chemicals...</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+
+            <!-- More projects can be added similarly -->
+
         </div>
-        <div class="project">
-            <h2>User Manual for ABC Software</h2>
-            <p>Created an engaging and easy-to-follow user manual for ABC Software, helping users quickly navigate through features and troubleshoot common issues.</p>
-        </div>
-        <div class="project">
-            <h2>Technical White Paper on DEF Technology</h2>
-            <p>Authored a technical white paper explaining the core functionalities of DEF Technology, targeting both technical and non-technical audiences.</p>
-        </div>
+
     </div>
 
     <div class="footer">
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 </body>
+
 </html>
