@@ -168,9 +168,10 @@
 
             <div class="contact-box">
                 <h2>Send a Message</h2>
-                <form id="contact-form">
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <form id="contact-form" method="post">
+                    <input type="text" id="from_name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit">Send</button>
                 </form>
             </div>
@@ -181,24 +182,28 @@
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 
-    <!-- EmailJS integration -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script>
-        (function () {
-            emailjs.init("jT6Z-oti5F9K57Auc"); // Your public key
-        })();
+        emailjs.init("jT6Z-oti5F9K57Auc"); // Initialize EmailJS with your public key
 
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            emailjs.send("service_awits19", "template_giil79h", {
-                email: document.querySelector('input[name="email"]').value,
-                message: document.querySelector('textarea[name="message"]').value
-            }).then(
+            var emailData = {
+                from_name: document.getElementById('from_name').value,  // User's name
+                email: document.getElementById('email').value,          // User's email
+                message: document.getElementById('message').value       // User's message
+            };
+
+            console.log('Sending email with data:', emailData);  // Debug log
+
+            emailjs.send("service_awits19", "template_giil79h", emailData).then(
                 function(response) {
+                    console.log("Email sent successfully:", response);  // Debug log
                     alert("Email sent successfully!");
                 },
                 function(error) {
+                    console.error("Email sending failed", error);  // Debug log
                     alert("Failed to send email. Please try again later.");
                 }
             );
