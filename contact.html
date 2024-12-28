@@ -182,11 +182,13 @@
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 
-    <!-- Use the correct SDK version -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Use the latest EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        emailjs.init("jT6Z-oti5F9K57Auc"); // Initialize EmailJS with your public key
+        // Initialize the EmailJS service with the correct public key
+        emailjs.init("jT6Z-oti5F9K57Auc");
 
+        // Form submission handler
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -196,8 +198,7 @@
                 message: document.getElementById('message').value       // User's message
             };
 
-            console.log('Sending email with data:', emailData);  // Debug log
-
+            // Send email with the correct service ID and template ID
             emailjs.send("service_awits19", "template_giil79h", emailData).then(
                 function(response) {
                     console.log("Email sent successfully:", response);  // Debug log
