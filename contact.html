@@ -8,13 +8,20 @@
     <meta name="author" content="Kotryna Petraityte">
     <title>Contact - Kotryna Petraityte</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- reCAPTCHA Script -->
+    
+    <!-- reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.0.0/dist/email.min.js"></script>
+
     <script type="text/javascript">
-        // Initialize emailjs with your public key
+        // Initialize EmailJS with your public key
         (function(){
             emailjs.init("jT6Z-oti5F9K57Auc");  // Replace with your public key
         })();
     </script>
+
     <style>
         body {
             font-family: 'Barlow', sans-serif;
