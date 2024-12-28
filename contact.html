@@ -11,16 +11,6 @@
     
     <!-- reCAPTCHA Script -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    
-    <!-- EmailJS Script -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.0.0/dist/email.min.js"></script>
-
-    <script type="text/javascript">
-        // Initialize EmailJS with your public key
-        (function(){
-            emailjs.init("jT6Z-oti5F9K57Auc");  // Replace with your public key
-        })();
-    </script>
 
     <style>
         body {
@@ -200,7 +190,15 @@
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 
+    <!-- EmailJS Script, moved to end of body -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.0.0/dist/email.min.js"></script>
+
     <script type="text/javascript">
+        // Initialize EmailJS with your public key
+        (function(){
+            emailjs.init("jT6Z-oti5F9K57Auc");  // Replace with your public key
+        })();
+
         // Handle form submission
         document.getElementById("contact-form").addEventListener("submit", function(event){
             event.preventDefault(); // Prevent form submission
