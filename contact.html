@@ -168,7 +168,7 @@
 
             <div class="contact-box">
                 <h2>Send a Message</h2>
-                <form action="#" method="post">
+                <form id="contact-form">
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit">Send</button>
@@ -180,5 +180,29 @@
     <div class="footer">
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
+
+    <!-- EmailJS integration -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("jT6Z-oti5F9K57Auc"); // Your public key
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            emailjs.send("service_awits19", "template_giil79h", {
+                email: document.querySelector('input[name="email"]').value,
+                message: document.querySelector('textarea[name="message"]').value
+            }).then(
+                function(response) {
+                    alert("Email sent successfully!");
+                },
+                function(error) {
+                    alert("Failed to send email. Please try again later.");
+                }
+            );
+        });
+    </script>
 </body>
 </html>
