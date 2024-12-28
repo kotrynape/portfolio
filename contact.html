@@ -168,10 +168,10 @@
 
             <div class="contact-box">
                 <h2>Send a Message</h2>
-                <form id="contact-form" method="post">
-                    <input type="text" id="from_name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                <form id="contact-form">
+                    <input type="text" name="from_name" id="from_name" placeholder="Your Name" required>
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                    <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit">Send</button>
                 </form>
             </div>
@@ -182,33 +182,29 @@
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 
-    <!-- Use the latest EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        // Initialize the EmailJS service with the correct public key
-        emailjs.init("jT6Z-oti5F9K57Auc");
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-        // Form submission handler
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("jT6Z-oti5F9K57Auc"); // Initialize with your public key
+        })();
+
+        // Send email function
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            var emailData = {
-                from_name: document.getElementById('from_name').value,  // User's name
-                email: document.getElementById('email').value,          // User's email
-                message: document.getElementById('message').value       // User's message
-            };
+            var form = event.target;
+            var formData = new FormData(form);
 
-            // Send email with the correct service ID and template ID
-            emailjs.send("service_awits19", "template_giil79h", emailData).then(
-                function(response) {
-                    console.log("Email sent successfully:", response);  // Debug log
-                    alert("Email sent successfully!");
-                },
-                function(error) {
-                    console.error("Email sending failed", error);  // Debug log
-                    alert("Failed to send email. Please try again later.");
-                }
-            );
+            emailjs.sendForm('service_awits19', 'template_giil79h', formData)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                    form.reset(); // Reset the form after success
+                }, function(error) {
+                    alert('Failed to send message. Please try again later.');
+                    console.error('Error sending email:', error);
+                });
         });
     </script>
 </body>
