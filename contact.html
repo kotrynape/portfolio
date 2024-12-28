@@ -169,9 +169,9 @@
             <div class="contact-box">
                 <h2>Send a Message</h2>
                 <form id="contact-form">
-                    <input type="text" name="from_name" id="from_name" placeholder="Your Name" required>
-                    <input type="email" name="email" id="email" placeholder="Your Email" required>
-                    <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
+                    <input type="text" name="from_name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit">Send</button>
                 </form>
             </div>
@@ -182,28 +182,21 @@
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 
-    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
     <script type="text/javascript">
         (function(){
-            emailjs.init("jT6Z-oti5F9K57Auc"); // Initialize with your public key
+            emailjs.init("jT6Z-oti5F9K57Auc");
         })();
 
-        // Send email function
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            var form = event.target;
-            var formData = new FormData(form);
-
-            emailjs.sendForm('service_awits19', 'template_giil79h', formData)
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            emailjs.sendForm('service_awits19', 'template_giil79h', this)
                 .then(function(response) {
-                    alert('Message sent successfully!');
-                    form.reset(); // Reset the form after success
+                    console.log('Success:', response);
+                    alert('Your message has been sent!');
                 }, function(error) {
-                    alert('Failed to send message. Please try again later.');
-                    console.error('Error sending email:', error);
+                    console.log('Error:', error);
+                    alert('Failed to send email. Please try again later.');
                 });
         });
     </script>
