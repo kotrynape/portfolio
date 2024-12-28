@@ -109,6 +109,7 @@
 
         .content .project {
             margin-bottom: 30px;
+            display: none; /* Initially hide the projects */
         }
 
         .content .project h3 {
@@ -165,7 +166,6 @@
             left: 220px;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
-
     </style>
 
     <script>
@@ -188,6 +188,19 @@
             projects.forEach(project => {
                 project.style.display = project.style.display === 'none' ? 'block' : 'none';
             });
+
+            // Change the text of the button based on the current state
+            const button = document.querySelector(`#${categoryId} button`);
+            const isVisible = projects[0].style.display === 'block';
+            button.textContent = isVisible ? 'Hide Projects' : 'Show Projects';
+        }
+
+        // Initialize the projects to be hidden when the page loads
+        window.onload = function() {
+            const allProjects = document.querySelectorAll('.project');
+            allProjects.forEach(project => {
+                project.style.display = 'none'; // Hide projects by default
+            };
         }
     </script>
 
@@ -215,12 +228,9 @@
 
             <div class="project">
                 <h3>Advanced Renewable Energy Systems</h3>
-                <p>The Department of Energy (DOE) envisions a future where solar energy supplies up to 40% of the nation's electricity by 2035. This shift aims to achieve deep decarbonization of the energy grid, create up to 1.5 million jobs, and maintain stable electricity prices. Mr. [redacted]’s pioneering control strategy for solar power plants is a crucial component in realizing this ambitious goal. By delivering essential stabilizing support to the power grid, his work enables the seamless integration of solar power into the energy mix, enhancing the resilience and sustainability of the U.S. electrical infrastructure and positioning the nation as a leader in sustainable energy innovation.</p>
+                <p>The Department of Energy (DOE) envisions a future where solar energy supplies up to 40% of the nation's electricity by 2035...</p>
                 <div class="more-content">
-                <p>To be more specific, Mr. [redacted]’s exceptional contribution lies in his ability to conduct meticulous and insightful research. For example, in one of his significant projects, he studied DC (direct current) power distribution systems, renowned for their efficiency and increasing relevance in sectors such as data centers, military bases, railways, and electric vehicle charging stations. His research focused on the stability of DC microgrids, particularly when operating independently from the main power grid. To explore this, Mr. [redacted] developed an off-grid DC microgrid incorporating local power generation sources, such as solar power plants and battery energy storage systems.</p>
-                <p>His findings highlighted a critical issue: when disconnected from the main grid, DC microgrids often experience instability. This problem stems from conventional solar power plant control strategies, which prioritize energy capture but struggle to respond to fluctuating consumer power demands, thereby jeopardizing grid stability. To address this, Mr. [redacted] proposed an innovative control strategy specifically designed for solar power plants. This approach included maintaining a reserve power capacity for emergencies and leveraging artificial intelligence to predict solar plant output in real time. Through comprehensive computer simulations, Mr. [redacted] validated his strategy’s effectiveness in stabilizing grid performance during unpredictable weather conditions and variations in consumer loads.
-
-</p>
+                    <p>This shift aims to achieve deep decarbonization of the energy grid, create up to 1.5 million jobs, and maintain stable electricity prices...</p>
                 </div>
                 <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
             </div>
@@ -234,24 +244,13 @@
                 <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
             </div>
 
-            <div class="project">
-                <h3>Photochromic Mechanisms in Rare-Earth Metal Hydrides</h3>
-                <p>Gold-catalyzed amination reactions have become an indispensable tool for synthesizing complex organic compounds...</p>
-                <div class="more-content">
-                    <p>Central to these reactions are α-oxo gold carbenes, which are formed through the synthesis of gold catalysts with other chemicals...</p>
-                </div>
-                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
-            </div>
-
-            <!-- More projects can be added similarly -->
-
         </div>
-
     </div>
 
     <div class="footer">
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
+
 </body>
 
 </html>
