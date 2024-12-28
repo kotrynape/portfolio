@@ -8,10 +8,6 @@
     <meta name="author" content="Kotryna Petraityte">
     <title>Contact - Kotryna Petraityte</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- reCAPTCHA Script -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
     <style>
         body {
             font-family: 'Barlow', sans-serif;
@@ -177,9 +173,9 @@
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     
-                    <!-- reCAPTCHA widget -->
+                    <!-- Google reCAPTCHA widget -->
                     <div class="g-recaptcha" data-sitekey="6LfKz6cqAAAAAFXwJebGzgDfrpsf6korVgOE6qif"></div>
-
+                    
                     <button type="submit">Send</button>
                 </form>
             </div>
@@ -190,20 +186,23 @@
         &copy; 2024 Kotryna Petraityte. All rights reserved.
     </div>
 
-    <!-- EmailJS Script, moved to end of body -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.0.0/dist/email.min.js"></script>
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Google reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script type="text/javascript">
         // Initialize EmailJS with your public key
         (function(){
-            emailjs.init("jT6Z-oti5F9K57Auc");  // Replace with your public key
+            emailjs.init("jT6Z-oti5F9K57Auc");
         })();
 
         // Handle form submission
-        document.getElementById("contact-form").addEventListener("submit", function(event){
-            event.preventDefault(); // Prevent form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-            // Get reCAPTCHA response
+            // Get the reCAPTCHA response
             var recaptchaResponse = grecaptcha.getResponse();
 
             // Check if reCAPTCHA is solved
@@ -212,20 +211,14 @@
                 return;
             }
 
-            // Collect form data
-            var formData = {
-                from_name: document.querySelector("[name='from_name']").value,
-                email: document.querySelector("[name='email']").value,
-                message: document.querySelector("[name='message']").value,
-                recaptcha_response: recaptchaResponse
-            };
-
-            // Send form data to EmailJS
-            emailjs.sendForm("service_awits19", "template_giil79h", formData)
+            // Send the form data including reCAPTCHA response
+            emailjs.sendForm('service_awits19', 'template_giil79h', this)
                 .then(function(response) {
-                    alert("Email sent successfully!");
+                    console.log('Success:', response);
+                    alert('Your message has been sent!');
                 }, function(error) {
-                    alert("Error sending email. Please try again.");
+                    console.log('Error:', error);
+                    alert('Failed to send email. Please try again later.');
                 });
         });
     </script>
