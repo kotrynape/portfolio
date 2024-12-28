@@ -78,11 +78,23 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 1.75em;
             color: #6E9E8A;
-            margin-bottom: 15px; /* consistent with the reference code */
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 0.02em;
             font-weight: 400;
         }
+
+        .contact-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4em; /* Adjusted for smaller size compared to h2 */
+            color: #6E9E8A;
+            margin-top: 0px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-weight: 400;
+        }
+
         .contact-section p {
             font-family: 'Barlow', sans-serif;
             font-size: 1.2em;
@@ -101,8 +113,8 @@
         }
 
         .contact-box {
-            margin-top: 20px;
-            margin-bottom: 40px; /* Add more space between the box and the footer */
+            margin-top: 0px;
+            margin-bottom: 40px;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
@@ -123,7 +135,7 @@
             font-size: 1em;
             color: #2c2c2c;
             background-color: #f9f9f9;
-            margin-bottom: 10px; /* Added margin to create space between input fields */
+            margin-bottom: 7px;
         }
 
         .contact-box textarea {
@@ -131,25 +143,25 @@
         }
 
         .contact-box button {
-    margin-top: 10px;
-    align-self: flex-end;
-    background-color: #6E9E8A !important;  /* Force the background color */
-    color: #ffffff !important;
-    padding: 12px 25px;
-    border: 1px solid #6E9E8A !important;  /* Force the border color */
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;  /* Add transition for background and border color */
-}
+            margin-top: 10px;
+            align-self: flex-end;
+            background-color: #6E9E8A !important;
+            color: #ffffff !important;
+            padding: 12px 25px;
+            border: 1px solid #6E9E8A !important;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
 
-.contact-box button:hover {
-    background-color: #497962 !important;  /* Hover background color */
-    color: #ffffff !important;  /* Text color remains white */
-    border-color: #497962 !important;  /* Hover border color */
-}
+        .contact-box button:hover {
+            background-color: #497962 !important;
+            color: #ffffff !important;
+            border-color: #497962 !important;
+        }
 
         .footer {
             text-align: center;
@@ -189,7 +201,7 @@
             <p>Or...</p>
 
             <div class="contact-box">
-                <h2>Send a Message</h2>
+                <h3>Send a Message</h3> <!-- Changed to h3 -->
                 <form id="contact-form">
                     <input type="text" name="from_name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
