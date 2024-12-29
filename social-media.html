@@ -67,7 +67,7 @@
         }
         .content p {
             font-family: 'Barlow', sans-serif;
-            font-size: 1em; /* Reduced font size to 1em */
+            font-size: 1em;
             margin-bottom: 20px;
             color: #555555;
             line-height: 1.6;
@@ -151,6 +151,7 @@
 
             images.forEach(img => {
                 img.addEventListener("click", () => {
+                    // Set the full image source when clicked
                     overlayImage.src = img.dataset.full;
                     overlay.classList.add("active");
                 });
@@ -158,6 +159,8 @@
 
             overlay.addEventListener("click", () => {
                 overlay.classList.remove("active");
+                // Reset image source to avoid memory leaks
+                overlayImage.src = "";
             });
         });
     </script>
@@ -180,20 +183,20 @@
         </div>
         <div class="row">
             <img src="https://www.digitalsense.lt/media/647_thumb.png" 
-                data-full="https://www.digitalsense.lt/media/647.png" 
-                alt="Social Media Content Example">
+                data-full="https://www.digitalsense.lt/media/647.webp" 
+                alt="Social Media Content Example" loading="lazy">
             <img src="https://www.digitalsense.lt/media/606_thumb.gif" 
-                data-full="https://www.digitalsense.lt/media/606.gif" 
-                alt="Digital Media Example">
+                data-full="https://www.digitalsense.lt/media/606.webp" 
+                alt="Digital Media Example" loading="lazy">
             <img src="https://www.digitalsense.lt/media/628_thumb.gif" 
-                data-full="https://www.digitalsense.lt/media/628.gif" 
-                alt="Google Ads Example">
+                data-full="https://www.digitalsense.lt/media/628.webp" 
+                alt="Google Ads Example" loading="lazy">
             <img src="https://www.digitalsense.lt/media/569_thumb.png" 
-                data-full="https://www.digitalsense.lt/media/569.png" 
-                alt="Website SEO Example">
+                data-full="https://www.digitalsense.lt/media/569.webp" 
+                alt="Website SEO Example" loading="lazy">
             <img src="https://www.digitalsense.lt/media/617_thumb.png" 
-                data-full="https://www.digitalsense.lt/media/617.png" 
-                alt="Additional Content Example">
+                data-full="https://www.digitalsense.lt/media/617.webp" 
+                alt="Additional Content Example" loading="lazy">
         </div>
         <p class="image-rights">&copy; Digital Sense and respective companies</p>
     </div>
