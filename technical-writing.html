@@ -75,23 +75,24 @@
         }
 
         .content button {
-            font-size: 1em;
-            color: #333;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 10px 20px;
-            margin-bottom: 15px;
-            cursor: pointer;
+            background-color: #6E9E8A;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 25px;
             border-radius: 5px;
+            font-family: 'Barlow', sans-serif;
+            font-size: 1em;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
         .content button:hover {
-            background-color: #6E9E8A;
-            color: #fff;
-            border-color: #6E9E8A;
+            background-color: #5E8D7C;
+            transform: translateY(-2px);
         }
 
         .content .category {
@@ -99,20 +100,6 @@
         }
 
         .content .category h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.75em;
-            color: #6E9E8A;
-            margin-bottom: 15px;
-            font-weight: 400;
-            text-transform: uppercase;
-        }
-
-        .content .project {
-            margin-bottom: 30px;
-            display: none; /* Initially hide the projects */
-        }
-
-        .content .project h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.25em;
             color: #6E9E8A;
@@ -122,10 +109,31 @@
             letter-spacing: 0.02em;
         }
 
-        .content .project p {
+        .content .project {
+            margin-bottom: 10px;
+        }
+
+        .content .row h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            color: #6E9E8A;
+            margin-bottom: 10px;
+        }
+        .content .projects-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 0px;
+            padding-top: 0px;  /* Reduce padding-top */
+        }
+                .content .project p {
             font-size: 1em;
             color: #666666;
             font-weight: 300;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Show only 3 lines */
+            -webkit-box-orient: vertical;
+                    
         }
 
         .content .project .more-content {
@@ -133,23 +141,20 @@
         }
 
         .content .project button.read-more {
-            font-size: 1em;
-            color: #333;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 10px 20px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
+            color: #5E8D7C;
+            font-weight: 500;
             text-transform: uppercase;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .content .project button.read-more:hover {
-            background-color: #6E9E8A;
-            color: #fff;
-            border-color: #6E9E8A;
+            font-size: 1.1em;
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin-top: 0;
+            padding-left: 0;
+            text-align: left;
+            display: inline;
+            margin-top: 0; /* Remove any top margin */
+            margin-bottom: 0px; /* Reduce bottom margin */
+            
         }
 
         .footer {
@@ -171,40 +176,40 @@
     <script>
         // Toggles the visibility of a single project's detailed content
         function toggleReadMore(button) {
-            const moreContent = button.previousElementSibling; // This is the .more-content div
+            const moreContent = button.previousElementSibling;
             const isVisible = moreContent.style.display === 'block';
             if (isVisible) {
                 moreContent.style.display = 'none';
-                button.textContent = 'Read More';
+                button.textContent = 'Continue Reading';
             } else {
                 moreContent.style.display = 'block';
                 button.textContent = 'Read Less';
             }
         }
 
-        // Toggles visibility of all projects in a category
+
+        // Toggles visibility of all projects in a category except the first one
         function toggleProjects(categoryId) {
             const category = document.getElementById(categoryId);
             const projects = category.querySelectorAll('.project');
-            projects.forEach(project => {
+            const button = category.querySelector('.projects-button button');
+            
+            // Loop through all projects and toggle their display
+            for (let i = 1; i < projects.length; i++) {
+                const project = projects[i];
                 project.style.display = project.style.display === 'none' ? 'block' : 'none';
-            });
+            }
 
-            // Change the text of the button based on the current state
-            const button = category.querySelector('button');
-            const isVisible = projects[0].style.display === 'block';
-            button.textContent = isVisible ? 'Hide Projects' : 'Show Projects';
+            // Update the button text based on visibility state
+            const allProjectsVisible = Array.from(projects).slice(1).every(project => project.style.display === 'block');
+            button.textContent = allProjectsVisible ? 'Show Less Projects' : 'Show More Projects';
         }
 
-        // Initialize the projects to be hidden when the page loads
         window.onload = function() {
-            const allCategories = document.querySelectorAll('.category');
-            allCategories.forEach(category => {
-                const projects = category.querySelectorAll('.project');
-                projects.forEach(project => {
-                    project.style.display = 'none'; // Hide projects by default
-                });
-            });
+            const firstProject = document.querySelector('.category .project');
+            if (firstProject) {
+                firstProject.style.display = 'block'; // Show the first project by default
+            }
         }
     </script>
 
@@ -224,67 +229,135 @@
     <div class="content">
         <h1>Technical Writing Projects</h1>
 
+
+
+        <!-- Science and Technology Innovations Category -->
         <div class="category" id="science-tech">
             <h2>Science and Technology Innovations</h2>
 
-            <!-- Show/Hide Projects button -->
-            <button onclick="toggleProjects('science-tech')">Show Projects</button>
-
-            <div class="project">
+            <!-- First Project: Always visible -->
+            <div class="project" style="display: block;">
                 <h3>Advanced Renewable Energy Systems</h3>
                 <p>The Department of Energy (DOE) envisions a future where solar energy supplies up to 40% of the nation's electricity by 2035...</p>
                 <div class="more-content">
                     <p>This shift aims to achieve deep decarbonization of the energy grid, create up to 1.5 million jobs, and maintain stable electricity prices...</p>
                 </div>
-                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
             </div>
 
-            <div class="project">
+            <!-- Hidden Projects -->
+            <div class="project" style="display: none;">
                 <h3>Semiconductor Materials for Optoelectronics</h3>
                 <p>Dr. [redacted]’s research on photochromic mechanisms in oxygen-containing rare-earth metal hydrides exemplifies his influential contributions...</p>
                 <div class="more-content">
                     <p>The material, YHxOy, is a newly discovered photochromic compound with a rapid photoresponse, making it highly promising for applications in optical sensors...</p>
                 </div>
-                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
+            </div>
+
+            <!-- Button to Show/Hide Projects, placed below the projects and centered -->
+            <div class="projects-button">
+                <button onclick="toggleProjects('science-tech')">Show More Projects</button>
             </div>
         </div>
-
-        <div class="category" id="science-tech-1">
-            <h2>Science and Technology Innovations</h2>
-
-            <!-- Show/Hide Projects button -->
-            <button onclick="toggleProjects('science-tech-1')">Show Projects</button>
-
-            <div class="project">
-                <h3>Advanced Renewable Energy Systems</h3>
-                <p>The Department of Energy (DOE) envisions a future where solar energy supplies up to 40% of the nation's electricity by 2035...</p>
+        
+        
+        
+         <!-- Healthcare and Biomedical Advancements Category -->
+        <div class="category" id="healthcare-biomedical">
+            <h2>Healthcare and Biomedical Advancements</h2>
+        
+            <!-- First Project: Always visible -->
+            <div class="project" style="display: block;">
+                <h3>Advances in Cancer Immunotherapy</h3>
+                <p>Recent breakthroughs in cancer immunotherapy have paved the way for novel treatments that harness the body’s immune system to fight cancer...</p>
                 <div class="more-content">
-                    <p>This shift aims to achieve deep decarbonization of the energy grid, create up to 1.5 million jobs, and maintain stable electricity prices...</p>
+                    <p>One key area of research is in the combination of immunotherapy with other treatments such as radiation and chemotherapy...</p>
                 </div>
-                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
             </div>
-        </div>
-
-        <div class="category" id="science-tech-2">
-            <h2>Science and Technology Innovations</h2>
-
-            <!-- Show/Hide Projects button -->
-            <button onclick="toggleProjects('science-tech-2')">Show Projects</button>
-
-            <div class="project">
-                <h3>Advanced Renewable Energy Systems</h3>
-                <p>The Department of Energy (DOE) envisions a future where solar energy supplies up to 40% of the nation's electricity by 2035...</p>
+        
+            <!-- Hidden Projects -->
+            <div class="project" style="display: none;">
+                <h3>Wearable Health Technology for Chronic Disease Management</h3>
+                <p>Wearable devices are revolutionizing the way we monitor and manage chronic diseases such as diabetes and cardiovascular conditions...</p>
                 <div class="more-content">
-                    <p>This shift aims to achieve deep decarbonization of the energy grid, create up to 1.5 million jobs, and maintain stable electricity prices...</p>
+                    <p>Recent innovations include smartwatches with built-in ECG monitoring, glucose sensors that continuously measure blood sugar levels...</p>
                 </div>
-                <button class="read-more" onclick="toggleReadMore(this)">Read More</button>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
+            </div>
+        
+            <div class="project" style="display: none;">
+                <h3>Gene Editing and CRISPR Technology</h3>
+                <p>Gene editing technologies, particularly CRISPR-Cas9, are transforming the field of medicine by allowing for precise modifications to DNA...</p>
+                <div class="more-content">
+                    <p>CRISPR technology is also being explored for its potential in cancer treatment, where it could be used to modify immune cells...</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
+            </div>
+        
+            <div class="project" style="display: none;">
+                <h3>Regenerative Medicine and Stem Cell Therapy</h3>
+                <p>Regenerative medicine is a rapidly growing field focused on repairing or replacing damaged tissues and organs...</p>
+                <div class="more-content">
+                    <p>Recent advancements have led to the development of lab-grown tissues and organs, which may one day eliminate the need for organ transplants...</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
+            </div>
+        
+            <div class="project" style="display: none;">
+                <h3>Artificial Intelligence in Medical Diagnostics</h3>
+                <p>Artificial intelligence (AI) is making significant strides in the field of medical diagnostics...</p>
+                <div class="more-content">
+                    <p>AI is also being used in genomics to predict genetic diseases, in drug discovery to identify potential new treatments...</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
+            </div>
+        
+            <!-- Button to Show/Hide Projects, placed below the projects and centered -->
+            <div class="projects-button">
+                <button onclick="toggleProjects('healthcare-biomedical')">Show More Projects</button>
             </div>
         </div>
+        
+        
+        
+        
+        <!-- Economic and Industrial Transformation Category -->
+        <div class="category" id="economics-industrial">
+            <h2>Economic and Industrial Transformation</h2>
+        
+            <!-- First Project: Always visible -->
+            <div class="project" style="display: block;">
+                <h3>Revolutionizing Global Supply Chains</h3>
+                <p>The global supply chain has seen profound changes due to automation, artificial intelligence, and shifting trade dynamics...</p>
+                <div class="more-content">
+                    <p>This transformation is reshaping industries, fostering new growth, and challenging businesses to adopt smarter strategies to remain competitive...</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
+            </div>
+        
+            <!-- Hidden Projects -->
+            <div class="project" style="display: none;">
+                <h3>Next-Gen Automation in Manufacturing</h3>
+                <p>Automation is enhancing industrial productivity by integrating robotics, artificial intelligence, and real-time analytics...</p>
+                <div class="more-content">
+                    <p>This innovation promises to reduce costs, improve product quality, and create new jobs in the tech industry, while fundamentally changing traditional manufacturing models...</p>
+                </div>
+                <button class="read-more" onclick="toggleReadMore(this)">Continue Reading</button>
+            </div>
+        
+            <!-- Button to Show/Hide Projects, placed below the projects and centered -->
+            <div class="projects-button">
+                <button onclick="toggleProjects('economics-industrial')">Show More Projects</button>
+            </div>
+        </div>
+        
+        
 
-    </div>
-
-    <div class="footer">
-        &copy; 2024 Kotryna Petraityte. All rights reserved.
+        <div class="footer">
+            &copy; 2024 Kotryna Petraityte. All rights reserved.
+        </div>
     </div>
 
 </body>
