@@ -35,17 +35,25 @@
         }
         nav a {
             margin: 20px 0;
-            text-decoration: none;
-            color: #495F56;
+            color: #666666;
             font-family: 'Barlow', sans-serif;
             font-weight: 500;
             font-size: 1.1em;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             transition: color 0.3s;
+            text-decoration: none !important; /* Force no underline */
+        }
+        .content .row a {
+            text-decoration: none !important;
+            color: #333333; /* Set the default color */
+        }
+        .content .row a:hover {
+            text-decoration: underline !important;
         }
         nav a:hover {
             color: #5E8D7C;
+            text-decoration: none !important; /* Force no underline on hover */
         }
         nav a:first-child {
             color: #6E9E8A;
@@ -127,7 +135,7 @@
             font-weight: 500;
             text-transform: uppercase;
             font-size: 1.1em;
-            margin-top: 10px;
+            margin-top: 0px;
         }
         .footer {
             text-align: center;
@@ -161,29 +169,29 @@
             <h2>Published Works</h2>
             <div class="row">
                 <div>
-                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/liutauro-degesio-knygos-recenzija-apie-vakar-ir-rytoj-kurie-yra-siandien-286-799454" target="_blank" style="color: #495F56;">Book Review: Yesterday and Tomorrow are Today</a></h3>
+                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/liutauro-degesio-knygos-recenzija-apie-vakar-ir-rytoj-kurie-yra-siandien-286-799454" target="_blank" >Book Review: Yesterday and Tomorrow are Today</a></h3>
                     <p><em>"Fully aware that the future is already here and that the present is so fleeting it scarcely seems to exist, the protagonist finds himself trapped in procrastination. He imagines he could be different — perhaps finally more fulfilled — if only he knew how to live in the moment, rather than in the shadow of the past. Hoping for salvation in tomorrow, he avoids, or even refuses, to admit that the day he placed all his hopes on — the day meant for understanding, self-discovery, and love — has already come and gone. It was yesterday."</em></p>
-                    <span class="read-more" onclick="toggleText(this)">Read more</span>
+                    <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.lrytas.lt/kultura/meno-pulsas/2020/05/17/news/rezisiere-rita-urbonaviciute-kiekvienas-gyvenimo-paradoksas-kvepia-dangumi--14929245" target="_blank" style="color: #495F56;">Interview with Director R. Urbanaviciute</a></h3>
+                    <h3><a href="https://www.lrytas.lt/kultura/meno-pulsas/2020/05/17/news/rezisiere-rita-urbonaviciute-kiekvienas-gyvenimo-paradoksas-kvepia-dangumi--14929245" target="_blank" >Interview with Director R. Urbanaviciute</a></h3>
                     <p><em>"Quarantine reshaped everyone's plans with a single stroke, but it was especially impactful for stage artists, whose lives were temporarily put on hold. Performances were postponed, rehearsals halted, and the creative flow interrupted. In light of this, we spoke with director R. Urbonaviciute about the current situation."</em></p>
-                    <span class="read-more" onclick="toggleText(this)">Read more</span>
+                    <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.bernardinai.lt/2017-06-22-stebuklas-tam-kad-taptum-zmogumi/" target="_blank" style="color: #495F56;">Book Review: Why People Need Miracles</a></h3>
+                    <h3><a href="https://www.bernardinai.lt/2017-06-22-stebuklas-tam-kad-taptum-zmogumi/" target="_blank" >Book Review: Why People Need Miracles</a></h3>
                     <p><em>"The author takes a somewhat harsh stance on modern children's literature and textbooks, arguing that they fail to cultivate free thinking in children. This, the author claims, deprives children of the chance to explore what truly matters at their developmental stage—often something entirely different from the priorities imposed by adults. Contrary to current trends of prioritizing logical knowledge, the author emphasizes that nurturing imagination should take precedence. (...) A child intuitively discovers their place in the world and finds answers to their own questions."</em></p>
-                    <span class="read-more" onclick="toggleText(this)">Read more</span>
+                    <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="http://www.g-taskas.lt/sveiki-sugrize-i-suduzusiu-sirdziu-kluba-pjeses-haroldas-ir-mode-premjera/#more-27616" target="_blank" style="color: #495F56;">Welcome Back to the Broken Hearts Club: Premiere of the play <em>Harold and Maude</em></a></h3>
+                    <h3><a href="http://www.g-taskas.lt/sveiki-sugrize-i-suduzusiu-sirdziu-kluba-pjeses-haroldas-ir-mode-premjera/#more-27616" target="_blank" >Welcome Back to the Broken Hearts Club: Premiere of the play <em>Harold and Maude</em></a></h3>
                     <p><em>"Unwilling and unable to conform to a society of superficial feelings, Harold retreats inward in protest. Sound familiar, millennials? (...) Harold rejects all of society’s life formulas, except for one — the formula of love. Not necessarily love for a man or a woman, for family, or for those who might benefit from it, but a love that is entirely unconditional — authentic, immediate, and meant for every person, plant, animal, and ultimately, for life itself. This is the kind of love Maude embodies, the love that opens Harold to life. An almost 80-year-old woman, who at first glance may seem a bit eccentric — perhaps even “crazy” to many of us “normals” — ultimately triumphs. Through her mere existence, she convinces Harold, and us, of a profound truth: life is wonderful, and even with a broken heart, one must go on to “love even harder, even more.”</em></p>
-                    <span class="read-more" onclick="toggleText(this)">Read more</span>
+                    <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.spaudosavaite.lt/2019/04/09/kreatyvo-ir-kurimo-riba-apie-laisva-valia-ir-sugribimo-istorijas/" target="_blank" style="color: #495F56;">Freedom of Will and Recovery</a></h3>
+                    <h3><a href="https://www.spaudosavaite.lt/2019/04/09/kreatyvo-ir-kurimo-riba-apie-laisva-valia-ir-sugribimo-istorijas/" target="_blank" >Freedom of Will and Recovery</a></h3>
                     <p><em>"We are a society of sick people, and we all know it, we feel it, we live it. In their own way, each person is affected, like a broken-down machine, a prisoner of circumstances — and still, there is no way out. But the real question, as always, is not in the machine's condition; it’s in the operator’s state. What would happen if we stopped blaming our faults on someone else? What would we do if we admitted that only we control the decisions that determine the next step?"</em></p>
-                    <span class="read-more" onclick="toggleText(this)">Read more</span>
+                    <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
             </div>
         </div>
@@ -199,7 +207,7 @@
             const paragraph = button.previousElementSibling;
             if (paragraph.style.maxHeight === 'none') {
                 paragraph.style.maxHeight = '220px'; // Collapse the paragraph
-                button.innerText = 'Read more';
+                button.innerText = 'Continue Reading';
             } else {
                 paragraph.style.maxHeight = 'none'; // Expand the paragraph
                 button.innerText = 'Read less';
