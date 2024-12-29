@@ -13,12 +13,41 @@
         body {
             font-family: 'Barlow', sans-serif;
             color: #2c2c2c;
-            background: url('https://i.ibb.co/0mkXw5r/Pngtree-simple-idea-creative-bubble-border-3853576.png') no-repeat center top/40%;
             margin: 0;
             padding: 0;
             font-weight: 300;
             line-height: 1.6;
+            position: relative; /* Ensure the body is a positioned element */
+            background-image: url('https://i.ibb.co/0mkXw5r/Pngtree-simple-idea-creative-bubble-border-3853576.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 40%;
+            z-index: 0; /* Make sure the background image is at the very back */
         }
+        
+        body::before {
+            content: ''; /* Creates the pseudo-element */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f9f9f9; /* Light gray filter */
+            opacity: 0.7; /* Adjust opacity to create a subtle filter effect */
+            z-index: 1; /* Puts the gray filter in front of the image */
+        }
+        
+        .content,
+        .contact-section,
+        .footer {
+            position: relative; /* Ensure all content is above the background layers */
+            z-index: 2; /* Places the content in front of the background and filter */
+        }
+        
+        .contact-box {
+            z-index: 3; /* Optional: Ensures the message box is at the very front */
+        }
+
 
         nav {
             display: flex;
@@ -34,6 +63,7 @@
             z-index: 1000;
             backdrop-filter: blur(5px);
             border-right: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
@@ -61,8 +91,6 @@
             padding: 40px;
             box-sizing: border-box;
             max-width: calc(100% - 560px);
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 15px;
         }
 
         .content h1 {
@@ -76,7 +104,7 @@
 
         .contact-section h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.75em;
+            font-size: 1.25em; /* Corrected size to match original */
             color: #6E9E8A;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -86,7 +114,7 @@
 
         .contact-section h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4em; /* Adjusted for smaller size compared to h2 */
+            font-size: 1.1em; /* Correct size for subheadings */
             color: #6E9E8A;
             margin-top: 0px;
             margin-bottom: 15px;
@@ -97,13 +125,13 @@
 
         .contact-section p {
             font-family: 'Barlow', sans-serif;
-            font-size: 1.2em;
+            font-size: 1em; /* Matching original size */
             color: #4b4b4b;
             margin-bottom: 10px;
         }
 
         .contact-section a {
-            color: #5E8D7C;
+            color: #333333;
             text-decoration: none;
             font-weight: 400;
         }
@@ -134,7 +162,7 @@
             font-family: 'Barlow', sans-serif;
             font-size: 1em;
             color: #2c2c2c;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             margin-bottom: 7px;
         }
 
@@ -143,26 +171,34 @@
         }
 
         .contact-box button {
+            background-color: #6E9E8A;
+            color: #ffffff;
             margin-top: 10px;
-            align-self: flex-end;
-            background-color: #6E9E8A !important;
-            color: #ffffff !important;
-            padding: 12px 25px;
-            border: 1px solid #6E9E8A !important;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-family: 'Barlow', sans-serif;
             font-size: 1em;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
             cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s;
         }
 
         .contact-box button:hover {
             background-color: #497962 !important;
             color: #ffffff !important;
-            border-color: #497962 !important;
+            background-color: #5E8D7C;
+            transform: translateY(-2px);
         }
-
+        .contact-box input:focus,
+        .contact-box textarea:focus {
+            border-color: #6E9E8A; /* Change border color when focused */
+            background-color: #f7f7f7; /* Optional: change background color */
+            outline: none; /* Remove the default outline */
+        }
         .footer {
             text-align: center;
             padding: 20px;
@@ -201,7 +237,7 @@
             <p>Or...</p>
 
             <div class="contact-box">
-                <h3>Send a Message</h3> <!-- Changed to h3 -->
+                <h3>Send a Message</h3>
                 <form id="contact-form">
                     <input type="text" name="from_name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
