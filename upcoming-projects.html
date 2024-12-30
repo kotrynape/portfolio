@@ -72,6 +72,7 @@
             color: #555555;
             line-height: 1.6;
             font-weight: 300;
+            margin-bottom: 30px;
         }
         .content .section {
             margin-bottom: 30px;
@@ -96,11 +97,12 @@
             margin-bottom: 40px;
         }
         .image-text-container img {
-            width: 400px;
+            width: 450px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             margin-right: 20px;
+            padding: 0;
         }
         .image-text-container .text {
             font-style: italic;
@@ -108,12 +110,16 @@
             color: #666666;
             margin-top: 10px;
             max-width: 600px;
+            margin-top: 0; /* Remove extra space above */
+            padding-top: 0; /* Ensure no padding */
         }
         .image-text-container h3 {
             font-style: normal;
             font-size: 1.2em;
             color: #333333;
             margin-bottom: 10px;
+            margin: 5px; /* Remove margin from the heading */
+            padding: 0;
         }
         .image-text-container .text a {
             color: #333333;
@@ -122,6 +128,27 @@
         .image-text-container .text a:hover {
             color: #333333;
             text-decoration: underline;
+        }
+         .read-more {
+            color: #5E8D7C;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin-top: 0;
+            padding-left: 0;
+            text-align: left;
+            display: inline;
+            margin-top: 0; /* Remove any top margin */
+            margin-bottom: 0px; /* Reduce bottom margin */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .read-more:hover {
+         
+            transform: translateY(-2px);
         }
         .footer {
             text-align: center;
@@ -138,6 +165,28 @@
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
     </style>
+    
+     <script>
+function toggleReadMore(button) {
+    // Find the parent container of the clicked button
+    const container = button.closest('.image-text-container');
+    
+    // Get all the .more-content elements inside this container
+    const contents = container.querySelectorAll('.more-content');
+
+    // Check if any content is hidden and toggle the display style of all the .more-content elements
+    const isHidden = Array.from(contents).every(content => content.style.display === 'none' || content.style.display === '');
+    
+    contents.forEach(content => {
+        content.style.display = isHidden ? 'block' : 'none';
+    });
+
+    // Update the button text based on whether the content is being shown or hidden
+    button.textContent = isHidden ? 'Read Less' : 'Continue Reading';
+}
+</script>
+
+    
 </head>
 <body>
     <nav>
@@ -152,8 +201,8 @@
     <div class="content">
         <h1>Upcoming Projects</h1>
         <div class="section">
-            <h2>What I'm Up to Now</h2>
-            <p>My current focus is updating both the content and web development of my personal blog, which is currently available only in Lithuanian. As part of this project, I am translating 30 articles into English. These articles were originally written during my travels in Spain (2019) and New Zealand (2024) and were first published in a small local media outlet. Each piece reached approximately 1,000 readers and delves into themes such as solo travel, solitude, human connection, and the pursuit of meaning through adventure.</p>
+            <h2>What She's up to Now</h2>
+            <p>Kotryna is translating a series of over 30 articles she wrote during her travels in Spain (2019) and New Zealand (2024), originally published in a small local media outlet. Reaching around 1,000 readers each, the articles explore themes of solo travel, solitude, human connection, and the search for meaning through adventure.</p>
 
             <!-- Image with title above and text to the right, title is the clickable link -->
             <div class="image-text-container">
@@ -164,13 +213,14 @@
                     <h3><a href="https://silales-artojas.lt/naujienos/krasto-turtas-zmones-istorija-tradicijos/2365-gal-galetumete-nepaaiskinti" target="_blank">I Look Forward To Not Hearing From You</a></h3>
                     <p>Things have moved on. Everywhere hurts terribly, but otherwise - if I can try to sound hip for once - it’s groovy. Sure, I might be getting dirtier and poorer by the day, but stashing the cash won’t be a huge issue - I’ve always found dirtbags somewhat appealing.</p> 
 
-<p>Now, I get it: my thoughts aren’t exactly poetic. Me and my writing Muse had loftier expectations for this spiritual and sacred Camino journey, but here we are: only me and you, my reader - both somewhat disappointed that the depth, once again, is missing. The Muse? Obviously, she left. Heck with it.</p> 
-<p>Instead, today my words are like a laughing kid, fooling around with friends in the yard, pulling harmless pranks on adults. Today - (shh, don’t tell my Muse; I still want her back) - less of the burdensome depths that drag into melancholy and more of that unexplainable joy. For once, let it be. I trust that the reason those poems aren’t writing themselves right now will become clear later.</p> 
-<p>And if it doesn’t - hell! I’m tired of Google offering millions of answers and explanations for even the stupidest questions and concerns. Wondering what kind of cancer you’ve got from that eyebrow pain today?</p> 
-Did we ever do research or weigh the pros and cons before pulling any pranks as kids? Ain’t no way! That’s why we later stood on the sidelines, guilt written all over our faces, as parents or teachers scolded us and asked, “Why did you do that?”
-<p>What the hell did we know! And that’s why we cried - not because we regretted the pranks, but because we were being pressured to answer the impossibly stupid WHY. Stay strong, kids! 
-</p>
-                </div>
+                    <p>Now, I get it: my thoughts aren’t exactly poetic. Me and my writing Muse had loftier expectations for this spiritual and sacred Camino journey, but here we are: only me and you, my reader - both somewhat disappointed that the depth, once again, is missing. The Muse? Obviously, she left. Heck with it.</p> 
+                    <p class="more-content" style="display: none;">Instead, today my words are like a laughing kid, fooling around with friends in the yard, pulling harmless pranks on adults. Today - (shh, don’t tell my Muse; I still want her back) - less of the burdensome depths that drag into melancholy and more of that unexplainable joy. For once, let it be. I trust that the reason those poems aren’t writing themselves right now will become clear later.</p> 
+                    <p class="more-content" style="display: none;">And if it doesn’t - hell! I’m tired of Google offering millions of answers and explanations for even the stupidest questions and concerns. Wondering what kind of cancer you’ve got from that eyebrow pain today?</p> 
+                    <p class="more-content" style="display: none;">Did we ever do research or weigh the pros and cons before pulling any pranks as kids? Ain’t no way! That’s why we later stood on the sidelines, guilt written all over our faces, as parents or teachers scolded us and asked, “Why did you do that?”</p> 
+                    <p class="more-content" style="display: none;">What the hell did we know! And that’s why we cried - not because we regretted the pranks, but because we were being pressured to answer the impossibly stupid WHY. Stay strong, kids! 
+                    </p>
+                    <button class="read-more" onclick="toggleReadMore(this, 'more-content')">Continue Reading</button>
+                                    </div>
             </div>
             
             <!-- Another image with title above and text to the right -->
@@ -181,11 +231,12 @@ Did we ever do research or weigh the pros and cons before pulling any pranks as 
                 <div class="text">
                     <h3><a href="https://silales-artojas.lt/naujienos/krasto-turtas-zmones-istorija-tradicijos/2751-vieno-miesto-istorija-londonas" target="_blank">London Calling: Ain't No Place To Hide</a></h3>
                     <p>Dulled by the sounds and lights of the city’s madness, I didn’t notice the sunset. I only realized it was getting dark when I reached the epicenter of the central part - the London Eye - and decided to step away, and lean against the railings of the Thames, letting the crowd continue its bustling without me while I watch the river flow.</p>
-<p>For a while, I stared at one spot on the river, where birds kept diving in and out of the water. After an entire day of staring at all kinds of London’s shops, people, and their flashy bling blings, I could finally look and see something I could understand better. Ducks. As they rose above the water, the birds, as if in agreement, cooed in unison. My senses returned to me, and now I could feel - yes, it is getting dark.</p>
-<p>My rustic evening meditation was interrupted by a guy who came up to ask for directions.  
-Sorry, can’t help - I’m not a local. Yes, I’m just visiting. I’m from Lithuania. Yes, I quite like London, but there’s so much of everything here that sometimes I’m overcome with fear - fear that I’ll forget to breathe, miss a colorful autumn leaf falling, or fail to hear the music of the evening world playing.</p>
-<p>“But do you live in a big city in Lithuania?” he asks. I live in Vilnius, the capital of our country. “So what, there are probably at least 3-4 million people living there too?”</p>
-<p>We look at each other in mutual surprise - he finds it hard to believe that the population of the entire country can be less than three million, and I find it hard to understand how people grow up in a city as large as London - constantly overstimulated senses, perpetually tense, and always missing something very important: they're missing ducks and dawns.</p>
+                    <p>For a while, I stared at one spot on the river, where birds kept diving in and out of the water. After an entire day of staring at all kinds of London’s shops, people, and their flashy bling blings, I could finally look and see something I could understand better. Ducks. As they rose above the water, the birds, as if in agreement, cooed in unison. My senses returned to me, and now I could feel - yes, it is getting dark.</p>
+                    <p class="more-content" style="display: none;">My rustic evening meditation was interrupted by a guy who came up to ask for directions.  
+                    Sorry, can’t help - I’m not a local. Yes, I’m just visiting. I’m from Lithuania. Yes, I quite like London, but there’s so much of everything here that sometimes I’m overcome with fear - fear that I’ll forget to breathe, miss a colorful autumn leaf falling, or fail to hear the music of the evening world playing.</p>
+                    <p class="more-content" style="display: none;">“But do you live in a big city in Lithuania?” he asks. I live in Vilnius, the capital of our country. “So what, there are probably at least 3-4 million people living there too?”</p>
+                    <p class="more-content" style="display: none;">We look at each other in mutual surprise - he finds it hard to believe that the population of the entire country can be less than three million, and I find it hard to understand how people grow up in a city as large as London - constantly overstimulated senses, perpetually tense, and always missing something very important: they're missing ducks and dawns.</p>
+                    <button class="read-more" onclick="toggleReadMore(this, 'more-content')">Continue Reading</button>
                 </div>
                   </div>
             <!-- Another image with title above and text to the right -->
@@ -196,9 +247,10 @@ Sorry, can’t help - I’m not a local. Yes, I’m just visiting. I’m from Li
                 <div class="text">
                     <h3><a href="https://silales-artojas.lt/naujienos/kultura-projektai/5751-pralaimetas-zygis-kai-dievas-pasijuokia-is-planu" target="_blank">We Plan, God Laughs: To Be Forced "Not To"</a></h3>
                     <p>Crawling uphill on all fours and then sliding down on my butt, I kept losing sight of the right direction - or maybe there was no right direction, as the hiking app and the trail commentators I’d initially laughed at had warned.</p>
-<p>Finally accepting that they might have been right, I stopped my now slightly panicked search for the trail and drew a few conclusions: I had moved only a couple of kilometers in two hours, I wasn’t sure where the real trail was, I was on a very steep hill without hiking poles, and, because of the heavy backpack, could barely keep my balance. Fatigue - or perhaps just my growing fear of darkness - forced me to switch off my stubbornness and turn on that tiny bit of common sense that I have. Three hours until sunset.</p>
-<p>Two options: take the risk and convince myself I could move faster and finally find the track down this stupidly steep mountain. It’s tight, but moving in the right direction - and quickly - would get me to the planned mountain lake just in time for sunset. Or, more realistically, turn around and try to make my way back to the fields, where it is flat and I could pitch a tent for the night.</p>
-<p>I’m not in some sad, dying relationship that would require a cruel ultimatum like that, I thought. Instead, I decided to give it some room, and compromise: for the next half hour, I would do my best to find a trail I could be absolutely certain of. If I succeeded and made even a little progress, I’d allow myself to continue to the end. But if I didn’t make much progress, I would turn around, carefully get back up on the steep landslides, make a quick run across the sheep pastures, and pitch a tent in the fields before sunset.</p>
+                    <p>Finally accepting that they might have been right, I stopped my now slightly panicked search for the trail and drew a few conclusions: I had moved only a couple of kilometers in two hours, I wasn’t sure where the real trail was, I was on a very steep hill without hiking poles, and, because of the heavy backpack, could barely keep my balance. Fatigue - or perhaps just my growing fear of darkness - forced me to switch off my stubbornness and turn on that tiny bit of common sense that I have. Three hours until sunset.</p>
+                    <p class="more-content" style="display: none;">Two options: take the risk and convince myself I could move faster and finally find the track down this stupidly steep mountain. It’s tight, but moving in the right direction - and quickly - would get me to the planned mountain lake just in time for sunset. Or, more realistically, turn around and try to make my way back to the fields, where it is flat and I could pitch a tent for the night.</p>
+                    <p class="more-content" style="display: none;">I’m not in some sad, dying relationship that would require a cruel ultimatum like that, I thought. Instead, I decided to give it some room, and compromise: for the next half hour, I would do my best to find a trail I could be absolutely certain of. If I succeeded and made even a little progress, I’d allow myself to continue to the end. But if I didn’t make much progress, I would turn around, carefully get back up on the steep landslides, make a quick run across the sheep pastures, and pitch a tent in the fields before sunset.</p>
+                    <button class="read-more" onclick="toggleReadMore(this, 'more-content')">Continue Reading</button>
                 </div>
             </div>
 
