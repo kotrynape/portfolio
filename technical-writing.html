@@ -155,7 +155,19 @@
             margin-bottom: 0px; /* Reduce bottom margin */
             
         }
-
+.styled-box {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    color: #6E9E8A;
+    cursor: default; /* Change cursor to default (arrow) */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    padding: 15px;
+    text-align: center;
+    }
         .footer {
             text-align: center;
             padding: 20px;
@@ -228,7 +240,24 @@
     <div class="content">
         <h1>Technical Writing</h1>
 <p>I wrote nearly 100 research summaries for world-class scientists and researchers to support their U.S. immigration applications. Most commonly, their work focused on health, energy, and computer technology. In addition to summarizing their most impactful research in concise, clear language, I built well-researched arguments to highlight the significance and national value of their contributions.</p>
-<p></p>To maintain confidentiality, I have included only the most relevant and brief, redacted excerpts.</p>
+<div class="styled-box">
+    To maintain confidentiality, I have included only the most relevant and brief, redacted excerpts.
+</div>
+<style>
+    .important-note {
+        margin-top: 20px;
+        font-family: 'Barlow', sans-serif;
+        font-size: 1em;
+        font-weight: 500;
+        color: #333333;
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-left: 3px solid #6E9E8A;
+        text-align: justify;
+        border-radius: 5px; /* Optional: Add rounded corners for a softer look */
+        box-shadow: none; /* Ensures no shadow effect */
+    }
+</style>
 
         <!-- Science and Technology Innovations Category -->
         <div class="category" id="science-tech">
