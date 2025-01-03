@@ -115,19 +115,45 @@
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        /* Adjust specific image sizes */
-        .row img:first-child {
-            grid-row: span 2; /* Large image spans two rows */
-            width: 100%;
-            height: 100%;
-        }
-        .row img:nth-child(2),
-        .row img:nth-child(3),
-        .row img:nth-child(4),
-        .row img:nth-child(5) {
-            width: 100%;
-            height: 100%; /* Ensure smaller images fit their grid cells */
-        }
+        
+        .content .row {
+    display: flex; /* Ensures the images are placed in a single row */
+    justify-content: center; /* Centers the images horizontally */
+    align-items: center; /* Aligns the images vertically */
+    gap: 20px; /* Adds spacing between the images */
+    margin-top: 50px; /* Adds top margin to the row */
+    flex-wrap: wrap; /* Allows wrapping to the next row if space is insufficient */
+}
+.content .row img {
+    max-width: 180px; /* Restricts the maximum width of each image */
+    height: auto; /* Maintains aspect ratio of the images */
+    border-radius: 5px; /* Rounds the corners of the images */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+    transition: transform 0.3s, box-shadow 0.3s; /* Adds smooth hover effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow around images */
+}
+.content .row img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhances the shadow effect on hover */
+}
+<div class="row">
+    <img src="https://www.digitalsense.lt/media/647_thumb.png" 
+         data-full="https://www.digitalsense.lt/media/647.webp" 
+         alt="Social Media Content Example" loading="lazy">
+    <img src="https://www.digitalsense.lt/media/606_thumb.gif" 
+         data-full="https://www.digitalsense.lt/media/606.webp" 
+         alt="Digital Media Example" loading="lazy">
+    <img src="https://www.digitalsense.lt/media/628_thumb.gif" 
+         data-full="https://www.digitalsense.lt/media/628.webp" 
+         alt="Google Ads Example" loading="lazy">
+    <img src="https://www.digitalsense.lt/media/569_thumb.png" 
+         data-full="https://www.digitalsense.lt/media/569.webp" 
+         alt="Website SEO Example" loading="lazy">
+    <img src="https://www.digitalsense.lt/media/617_thumb.png" 
+         data-full="https://www.digitalsense.lt/media/617.webp" 
+         alt="Additional Content Example" loading="lazy">
+</div>
+
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
