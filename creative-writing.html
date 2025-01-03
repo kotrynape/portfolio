@@ -1,4 +1,4 @@
-Put your HTML text here<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -112,10 +112,12 @@ Put your HTML text here<!DOCTYPE html>
             border-right: none;
         }
         .content .row h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1em;
-            color: #6E9E8A;
+            font-style: normal;
+            font-size: 1.2em;
+            color: #333333;
             margin-bottom: 10px;
+            margin: 5px; /* Remove margin from the heading */
+            padding: 0;
         }
         .content .row p {
             font-family: 'Barlow', sans-serif;
@@ -140,6 +142,16 @@ Put your HTML text here<!DOCTYPE html>
             color: #6E9E8A; /* Slightly lighter green for hover */
             text-decoration: underline;
         }
+        a.highlighted {
+            color: #333333; /* Set the desired color */
+            font-weight: bold; /* Optional: make them stand out */
+            text-decoration: none; /* Optional: remove underline */
+        }
+        
+        a.highlighted:hover {
+            color: #333333;
+            text-decoration: underline;
+        }
         .footer {
             text-align: center;
             padding: 20px;
@@ -155,8 +167,8 @@ Put your HTML text here<!DOCTYPE html>
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
     </style>
-</head>
-<body>
+
+
     <nav>
         <a href="index.html">Home</a>
         <a href="technical-writing.html">Technical Writing</a>
@@ -172,27 +184,27 @@ Put your HTML text here<!DOCTYPE html>
             <p>Brief excerpts have been translated into English and are provided below.</p>
             <div class="row">
                 <div>
-                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/liutauro-degesio-knygos-recenzija-apie-vakar-ir-rytoj-kurie-yra-siandien-286-799454" target="_blank">Book Review: Yesterday and Tomorrow are Today</a></h3>
+                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/liutauro-degesio-knygos-recenzija-apie-vakar-ir-rytoj-kurie-yra-siandien-286-799454" target="_blank" class="highlighted">Book Review: Yesterday and Tomorrow are Today</a></h3>
                     <p><em>"Fully aware that the future is already here and that the present is so fleeting it scarcely seems to exist, the protagonist finds himself trapped in procrastination. He imagines he could be different — perhaps finally more fulfilled — if only he knew how to live in the moment, rather than in the shadow of the past. Hoping for salvation in tomorrow, he avoids, or even refuses, to admit that the day he placed all his hopes on — the day meant for understanding, self-discovery, and love — has already come and gone. It was yesterday."</em></p>
                     <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.lrytas.lt/kultura/meno-pulsas/2020/05/17/news/rezisiere-rita-urbonaviciute-kiekvienas-gyvenimo-paradoksas-kvepia-dangumi--14929245" target="_blank">Interview with Director R. Urbanaviciute</a></h3>
+                    <h3><a href="https://www.lrytas.lt/kultura/meno-pulsas/2020/05/17/news/rezisiere-rita-urbonaviciute-kiekvienas-gyvenimo-paradoksas-kvepia-dangumi--14929245" target="_blank" class="highlighted">Interview with Director R. Urbanaviciute</a></h3>
                     <p><em>"Quarantine reshaped everyone's plans with a single stroke, but it was especially impactful for stage artists, whose lives were temporarily put on hold. Performances were postponed, rehearsals halted, and the creative flow interrupted. In light of this, we spoke with director R. Urbonaviciute about the current situation."</em></p>
                     <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.bernardinai.lt/2017-06-22-stebuklas-tam-kad-taptum-zmogumi/" target="_blank">Book Review: Why People Need Miracles</a></h3>
+                    <h3><a href="https://www.bernardinai.lt/2017-06-22-stebuklas-tam-kad-taptum-zmogumi/" target="_blank" class="highlighted">Book Review: Why People Need Miracles</a></h3>
                     <p><em>"The author takes a somewhat harsh stance on modern children's literature and textbooks, arguing that they fail to cultivate free thinking in children. This, the author claims, deprives children of the chance to explore what truly matters at their developmental stage—often something entirely different from the priorities imposed by adults. Contrary to current trends of prioritizing logical knowledge, the author emphasizes that nurturing imagination should take precedence. (...) A child intuitively discovers their place in the world and finds answers to their own questions."</em></p>
                     <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="http://www.g-taskas.lt/sveiki-sugrize-i-suduzusiu-sirdziu-kluba-pjeses-haroldas-ir-mode-premjera/#more-27616" target="_blank">Welcome Back to the Broken Hearts Club: Premiere of the play <em>Harold and Maude</em></a></h3>
+                    <h3><a href="http://www.g-taskas.lt/sveiki-sugrize-i-suduzusiu-sirdziu-kluba-pjeses-haroldas-ir-mode-premjera/#more-27616" target="_blank" class="highlighted">Welcome Back to the Broken Hearts Club: Premiere of the play <em>Harold and Maude</em></a></h3>
                     <p><em>"Unwilling and unable to conform to a society of superficial feelings, Harold retreats inward in protest. Sound familiar, millennials? (...) Harold rejects all of society’s life formulas, except for one — the formula of love. Not necessarily love for a man or a woman, for family, or for those who might benefit from it, but a love that is entirely unconditional — authentic, immediate, and meant for every person, plant, animal, and ultimately, for life itself. This is the kind of love Maude embodies, the love that opens Harold to life. An almost 80-year-old woman, who at first glance may seem a bit eccentric — perhaps even “crazy” to many of us “normals” — ultimately triumphs. Through her mere existence, she convinces Harold, and us, of a profound truth: life is wonderful, and even with a broken heart, one must go on to “love even harder, even more.”"</em></p>
                     <span class="read-more" onclick="toggleText(this)">Continue Reading</span>
                 </div>
                 <div>
-                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/su-meile-paslapciai-keith-stuart-knygos-kaladeliu-berniukas-recenzija-286-830040" target="_blank">Book Review: With Love, To the Unknown</a></h3>
+                    <h3><a href="https://www.15min.lt/kultura/naujiena/literatura/su-meile-paslapciai-keith-stuart-knygos-kaladeliu-berniukas-recenzija-286-830040" target="_blank" class="highlighted">Book Review: With Love, To the Unknown</a></h3>
                     <p><em>
                         I invite you to play along and ask yourself: Would you dare not laugh at your boss's cringeworthy joke? To break down in tears simply because exhaustion has caught up with you? And on that same day, to avoid smiling back or asking how your distant relatives — those you only see at funerals and whose names you can’t quite remember — are doing? Admit it: the risk of falling off the "normal" list feels too great, and the cost of doing so, even greater. Beyond the few rebellious souls who defy these norms, there are those who never had a choice—they fall off the list at birth, born without the rulebook most people seem to follow. This, in the eyes of Sam’s father, is what autism is.
                     </em></p>
