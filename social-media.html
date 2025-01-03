@@ -16,6 +16,9 @@
             margin: 0;
             padding: 0;
             font-weight: 300;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         nav {
             display: flex;
@@ -46,11 +49,15 @@
         }
         nav a:hover {
             color: #5E8D7C;
-            
+        }
+
+        nav a:first-child {
+            color: #6E9E8A;
         }
         .content {
             margin-left: 260px;
             padding: 40px;
+            flex: 1;
         }
         .content h1 {
             font-family: 'Montserrat', sans-serif;
@@ -60,28 +67,32 @@
             text-transform: uppercase;
             font-weight: 400;
         }
-        .boxes {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .interactive-buttons {
             margin-top: 20px;
-        }
-        .box {
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9em;
-            color: #6E9E8A;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            padding: 15px;
             text-align: center;
         }
-        .box:hover {
+        .interactive-buttons button {
+            margin: 10px;
+            padding: 10px 15px;
+            background-color: #6E9E8A;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Barlow', sans-serif;
+            font-size: 1em;
+        }
+        .interactive-buttons button:hover {
+            background-color: #5E8D7C;
+        }
+        .text-box {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
             background-color: #f9f9f9;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-left: 3px solid #6E9E8A;
+            border-radius: 5px;
+            font-family: 'Barlow', sans-serif;
         }
         .row {
             display: flex;
@@ -102,6 +113,12 @@
         .row img:hover {
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .image-rights {
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Barlow', sans-serif;
+            color: #666666;
         }
         .overlay {
             position: fixed;
@@ -124,36 +141,41 @@
             display: flex;
         }
         .footer {
-    text-align: center; /* Centers the footer text */
-    padding: 20px; /* Adds space around the text */
-    background-color: #eaeaea; /* Light gray background */
-    color: #666666; /* Text color */
-    font-family: 'Barlow', sans-serif; /* Font style */
-    font-size: 0.9em; /* Slightly smaller text size */
-    font-weight: 300; /* Light font weight */
-    position: fixed; /* Fixes the footer at the bottom of the viewport */
-    bottom: 0; /* Positions it at the bottom */
-    width: calc(100% - 220px); /* Adjusts width to leave space for the side navigation */
-    left: 220px; /* Positions it to align with the side navigation */
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Adds a subtle border at the top */
-}
+            text-align: center;
+            padding: 20px;
+            background-color: #eaeaea;
+            color: #666666;
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.9em;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".interactive-buttons button");
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const targetId = button.dataset.target;
+                    const textBox = document.getElementById(targetId);
+                    textBox.style.display = textBox.style.display === "block" ? "none" : "block";
+                });
+            });
+
             const images = document.querySelectorAll(".row img");
             const overlay = document.querySelector(".overlay");
             const overlayImage = overlay.querySelector("img");
 
             images.forEach(img => {
                 img.addEventListener("click", () => {
-                    overlayImage.src = img.src; // Use the same image source
+                    overlayImage.src = img.src;
                     overlay.classList.add("active");
                 });
             });
 
             overlay.addEventListener("click", () => {
                 overlay.classList.remove("active");
-                overlayImage.src = ""; // Clear the source when closed
+                overlayImage.src = "";
             });
         });
     </script>
@@ -171,6 +193,28 @@
         <h1>Digital Marketing</h1>
         <p>At a digital marketing company, I collaborated with graphic designers and programmers to create digital content campaigns for well-known European brands like Telia, General Financing, and Walmark Stada.</p>
 
+        <!-- Interactive Buttons -->
+        <div class="interactive-buttons">
+            <button data-target="text-box-1">Ghostwriting Blog Posts</button>
+            <button data-target="text-box-2">Social Media Communication</button>
+            <button data-target="text-box-3">Google Ads and SEO</button>
+            <button data-target="text-box-4">Creative Campaign Ideas</button>
+        </div>
+
+        <!-- Text Boxes -->
+        <div id="text-box-1" class="text-box">
+            As a ghostwriter, I wrote SEO-friendly blog posts that helped to establish a strong brand voice through educational, engaging content, rather than pure entertainment. This is when I wrote article-length pieces while staying behind the scenes and not taking credit for it.
+        </div>
+        <div id="text-box-2" class="text-box">
+            Short, engaging content goes a very — very — long way with today’s audience, but just as important is consistency in social media communication — no one trusts a brand that rarely posts. The optimal posting frequency varies by platform and industry, but for companies with high social media needs, I created 20 to 35 posts per month.
+        </div>
+        <div id="text-box-3" class="text-box">
+            Google Ads are short, keyword-based ads that appear at the top of Google search results through paid promotion. SEO (search engine optimization) is the process of improving a website’s content and structure to help it rank higher in organic search results over time. It’s like buying Instagram followers versus building a genuine audience — the first gets you quick attention, but the second is more reliable and lasting. The answer is — both are necessary, as both of them help get you closer to the first page of Google search results, and with 93% of online experiences starting with a search engine, visibility is key.
+        </div>
+        <div id="text-box-4" class="text-box">
+            A well-planned campaign combines audio, video, and the power of words - like optimized Google Ads, catchy slogans, and engaging content. Is it worth it? Well - studies show that 64% of people are more likely to buy after seeing branded content, and strong slogans can boost brand recall by up to 80%.
+        </div>
+
         <!-- Images Section -->
         <div class="row">
             <img src="https://www.digitalsense.lt/media/647_thumb.png" alt="Image 1" loading="lazy">
@@ -178,15 +222,17 @@
             <img src="https://www.digitalsense.lt/media/628_thumb.gif" alt="Image 3" loading="lazy">
             <img src="https://www.digitalsense.lt/media/569_thumb.png" alt="Image 4" loading="lazy">
             <img src="https://www.digitalsense.lt/media/617_thumb.png" alt="Image 5" loading="lazy">
-      </div>
+        </div>
         <p class="image-rights">&copy; Digital Sense and respective companies</p>
     </div>
+
     <!-- Fullscreen Overlay for Expanded Images -->
     <div class="overlay">
         <img src="" alt="Expanded Image">
     </div>
+
     <div class="footer">
-    &copy; 2024 Kotryna Petraityte. All rights reserved.
-</div>
+        &copy; 2024 Kotryna Petraityte. All rights reserved.
+    </div>
 </body>
 </html>
