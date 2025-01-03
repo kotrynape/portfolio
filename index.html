@@ -98,19 +98,23 @@
 
         nav a {
             margin: 20px 0;
-            text-decoration: none;
             color: #333333;
+            line-height: 1.4; /* Adjust as needed */
             font-family: 'Barlow', sans-serif;
             font-weight: 500;
             font-size: 1.1em;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             transition: color 0.3s;
+            text-decoration: none !important; /* Force no underline */
         }
 
         nav a:hover {
             color: #5E8D7C;
-            text-decoration: underline;
+            text-decoration: none;
+        }
+        nav a:first-child {
+            color: #6E9E8A;
         }
 
         /* Footer styles */
